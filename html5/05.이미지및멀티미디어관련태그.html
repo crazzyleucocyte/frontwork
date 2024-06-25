@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지및멀티미디어관련태그</title>
+</head>
+<body>
+    <!-- 이미지 삽입 태그
+     <img src="삽입하고자하는 이미지 경로"[alt="이미지 설명문구"
+     ,width="가로길이(px 픽셀단위/% 퍼센트)",height="세로길이(px 픽셀단위/% 퍼센트)"]//시각장애인들에게는 이 alt문구를 읽어준다
+     
+    -->
+     <h1>이미지 관련 태그</h1>
+    <h3>* src속성</h3>
+    <figure>
+    <!--               이 경로는 상대경로                                   -->
+    <img src="resources/img/cat-8769861_1280.jpg" alt="잠자는 고양이">
+    <!--               이 경로는 절대경로                                   -->
+    <!-- <img src="C:\KMS\frontwork\html5\resources\img\cat-8769861_1280.jpg" alt="잠자는 고양이"> -->
+    <figcaption>잠자는 고양이</figcaption>
+</figure>
+<h3> * alt 속성</h3>
+<p>
+    -사진의 경로가 잘못되었거나 이미지를 제대로 표현하지 못할 경우 대체택스트의 용거
+    - 시각장애인들을 위한 스크린리더(화면낭독기)에서 이미지를 읽어주는 설명 문구
+</p>
+<img src="resources/img/cat-8769861_1280.jg" alt="풀숲에서 잠을 자는 고양이"><br>
+
+<h3>* width와 height의 속성</h3>
+<p>
+    이미지의 가로, 세로 길이를 조걸하는 속성<br>
+    고정길이(px), 가변길이(%)로 지정 => 기본값은 px단위
+</p>
+
+<h4>고정길이단위(px) == 기본값 : 화면 사이즈가 조정되어도 이미지의 크기는 변하지 않는다.</h4>
+
+<img src="resources/img/cat1.jpg" width="400" height="300" alt="">
+<img src="resources/img/cat2.png" width="100" alt="">
+<img src="resources/img/cat3.jpg" width="200" alt="">
+<img src="resources/img/cat4.jpg" width="300" alt="">
+
+<br>
+<h4>가변길이(%) : 화면사이즈 또는 부모요소사이즈에 따라 이미지의 크기도 같이 변함</h4>
+<img src="resources/img/cat1.jpg" width="23%" height="250" alt="">
+<img src="resources/img/cat2.png" width="23%" height="250"alt="">
+<img src="resources/img/cat3.jpg" width="23%" height="250"alt="">
+<img src="resources/img/cat4.jpg" width="23%" height="250"alt="">
+
+<h1>미디어관련 태그</h1>
+<h3>오디오 관련 태그</h3>
+<!-- 
+    <audio src="삽입하고자하는 오디오 경로"[controls autoplay loop]></audio>  이렇게 하면 글씨를 써줄 수 있고
+    <audio src="삽입하고자하는 오디오 경로"[controls autoplay loop] />  이렇게 하면 글씨 안쓰는 대신 더 짧게 쓸 수 있다. 
+-->
+    <audio src="resources/audio/KakaoTalk_Audio_20240625_1240_10_426.m4a"controls></audio>
+
+<h3>비디오 관련 태그</h3>
+<!-- 
+    <video src="삽입하고자하는 비디오 경로" [controls autoplay loop poster="썸내일 이미지 경로" width="" height=""]></video>
+-->
+<video src="resources/video/KakaoTalk_20240625_135242517.mp4" autoplay controls width="900"  poster="resources/video/KakaoTalk_20240625_135620464.jpg" width="900" ></video>
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+</body>
+</html>

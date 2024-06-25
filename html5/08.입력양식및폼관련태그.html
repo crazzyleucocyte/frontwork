@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식및폼관련태그</title>
+</head>
+<body>
+    <h1>입력양식 관련 태그</h1>
+
+    <h2>input 태그</h2>
+    <p>
+    사용자로부터 값을 입력받을 수 있는 텍스트 상자 및 체크박스, 라디오버튼 등을 만들 수 있음
+    </p>
+
+    <!-- text 타입은 텍스트를 입력 받을 수 있는 곳
+         radio 는 체크박스 -->
+    아이디 : <input type="text"> <br>
+    비밀번호 : <input type="text"> <br>
+    성별 : <input type="radio">남 &emsp; <input type="radio">여 <br>
+    <input type="submit" value="회원가입">
+
+    <br>
+
+    <hr>
+
+    <h1>폼 관련 태그</h1>
+    <p>
+        form 태그내에 submit 버튼 글릭시 해당 form안에 작성된 <br>
+        사용자가 입력한 값들을 서버로 전송하면서 요청하는 역할 수행 <br><br>
+
+        form action="서버로 전송될 값" method="전송 방법"<br><br>
+        
+
+        *action 속성 : 해당 form에 사용자가 입력한 값들을 전달하면서 요청할 서버의 경로를 넣어줌
+        *method 속성 : 요청 전송 방식을 지정하는 속성(기본값은 get | post) <br>
+            >get방식 : 요청시 사용자가 입력한 값들이 url에 노출되는 방식 (url에 내가 검색한 검색어가 뜰 경우)<br>
+            >post방식 : 요청시 사용자가 입력한 값들이 url에 노출이 되지 않는 방식(아이디나 비번같이 중요한 정보는 url에 노출되면 안된다.)
+
+            form 내의 submit 버튼 클릭시 action에 지정한 서버로 사용자가 입력한 값들이<br>
+            넘어가면서 요청됨(사용자가 입력한 값들은 key=value 세트로 전달)
+    </p>
+    search?id=kkk&pw=1234&age=24(id가 key, kkk가 value값이다)
+    웹에서 입력한 값들이 서버나 db로 넘어갈때 위의 양식으로 넘어간다.
+    
+    <form action = "search.jsp" method="post">
+        검색어 : <input type="text" name="keyword">
+        <input type="submit"value="검색">
+    </form>
+<!-- 
+    //get
+    이 상태로 웹에서 실행 후 검색에 아무거나 치고 검색 버튼을 눌렀을떄 
+    file:///C:/KMS/frontwork/html5/search.jsp?keyword=fsdfsdfsdfsdf
+    이렇게 입력한 값이 url에 뜬다.
+
+    //post
+    post로 했을 경우
+    file:///C:/KMS/frontwork/html5/search.jsp
+    이렇게 뜬다.
+-->
+
+<h3>fieldset : 그룹을 묶는 태그(기본적인 테두리 존제)</h3>
+<h3>legend : 해당 그룹의 제목을 붙이는 태그</h3>
+
+<form action="">
+    <fieldset>
+        <legend>
+            제목1
+        </legend>
+        입력1 : <input type="text" name="text1"><br>
+        입력2 : <input type="text"><br>
+        <!-- type 속성의 기본값은 "text" type이 없으면 기본값임-->
+    </fieldset>
+    <fieldset>
+        <legend>제목2</legend>
+        입력3 : <input type="text"><br>
+        입력4 : <input type="text">
+    </fieldset>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
