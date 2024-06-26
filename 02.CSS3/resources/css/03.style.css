@@ -1,0 +1,164 @@
+
+
+/* ================================1. 속성 선택자================================= */
+/* div요소들 중 name 속성값이 name1과 "일치"하는 요소 */
+div[name=name1]{
+    background-color:red
+}
+/* div요소들 중 name 속성값이 name1이 "포함"되어있는 요소(공백으로 구분, 단어 단위로) */
+
+div[name~=name1]{
+    color: blue;
+}
+/* div요소들 중 class의 속성값이 class로 "시작"하는 요소 */
+
+div[class^=class]{
+    color: blueviolet;
+}
+
+
+/* div요소들 중 class의 속성값이 class로 "시작"하는 요소(단어단위로 -로 구분) */
+div[class|=class]{
+    background-color: rgb(180, 216, 19);
+}
+
+
+/* div요소들 중 class의 속성값이 ss로 끝나는 요소 */
+div[class$=ss ]{
+    font-size: 25px;
+}
+
+/* div요소들 중 name의 속성값에 am이 포함되어있는 요소 */
+
+div[name*=am]{
+    border: 1px dotted;
+  
+}
+
+/* 응용 : class 속성값이 div-class인 요소들 중에서
+ name 속성값이 name3이 포함되어있는 요소에 배경색 스타일 적용 */
+
+ /* div[class=div-class][ name~=name3]{
+
+    background-color: lightgreen ;
+ } */
+    .div-class[name~=name3]{
+        background-color: aqua;
+    }
+
+/* ==================================2.자손 선택자와 후손 선택자================================ */
+/* id가 test1인 요소의 자손들 중 h4요소만 선택 */
+
+#test1>h4{
+    background-color: red;
+}
+
+/* ul의 자손들 선택 */
+#test>ul{
+    font-size: 20px;
+}
+
+
+/* ==================================3. 동위 선택자================================ */
+/* id가 test2인 형제들 중 바로 뒤에 나오는 div 요소 하나만 */
+#test2+div{
+    background-color: aquamarine;
+}
+
+#test2+ul{
+    background-color: yellow;
+    /* 선택안됨(바로 뒤의 요소가 아니기 떄문) */
+}
+
+/* id가 test2인 형제들 중 div요소 모두 선택*/
+#test2~div{color: brown;}
+
+
+/* ==================================4. 반응 선택자================================ */
+
+.area{
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+}
+
+#active-test:hover{
+    background-color: limegreen;
+    width: 300px;
+    height: 300px;
+}
+#active-test:active{
+    background-color: rgb(121, 121, 47);
+    width: 900px;
+    height: 900px;
+}
+#hover-test:hover{
+    background-color: lightseagreen;
+}
+#hover-test:active{
+    background-color: lightsalmon;
+}
+
+/* ==================================5. 상태 선택자================================ */
+
+input[type=checkbox]:checked{
+    width: 50px;
+    height: 50px;
+  
+}
+input[type=checkbox]:checked+label{
+   
+    font-size: 50px;
+}
+
+input[name^=user]:focus{
+    background-color: coral;
+}
+
+
+button:enabled{
+    background-color: lightpink;
+}
+
+button:disabled{
+    background-color: rgb(74, 57, 114);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.class1 .clas1{
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+html ol[class*=class]>li[class*=s2] {
+    background-color: red;
+}
+
+ol[class*=s1]>li[class*=s1]~li[class*=s3]{
+    font-size: large;
+    color: blue;
+}

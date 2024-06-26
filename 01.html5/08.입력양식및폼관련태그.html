@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식및폼관련태그</title>
+</head>
+<body>
+    <h1>입력양식 관련 태그</h1>
+
+    <h2>input 태그</h2>
+    <p>
+    사용자로부터 값을 입력받을 수 있는 텍스트 상자 및 체크박스, 라디오버튼 등을 만들 수 있음
+    </p>
+
+    <!-- text 타입은 텍스트를 입력 받을 수 있는 곳
+         radio 는 체크박스 -->
+    아이디 : <input type="text"> <br>
+    비밀번호 : <input type="text"> <br>
+    성별 : <input type="radio">남 &emsp; <input type="radio">여 <br>
+    <input type="submit" value="회원가입">
+
+    <br>
+
+    <hr>
+
+    <h1>폼 관련 태그</h1>
+    <p>
+        form 태그내에 submit 버튼 글릭시 해당 form안에 작성된 <br>
+        사용자가 입력한 값들을 서버로 전송하면서 요청하는 역할 수행 <br><br>
+
+        form action="서버로 전송될 값" method="전송 방법"<br><br>
+        
+
+        *action 속성 : 해당 form에 사용자가 입력한 값들을 전달하면서 요청할 서버의 경로를 넣어줌
+        *method 속성 : 요청 전송 방식을 지정하는 속성(기본값은 get | post) <br>
+            >get방식 : 요청시 사용자가 입력한 값들이 url에 노출되는 방식 (url에 내가 검색한 검색어가 뜰 경우)<br>
+            >post방식 : 요청시 사용자가 입력한 값들이 url에 노출이 되지 않는 방식(아이디나 비번같이 중요한 정보는 url에 노출되면 안된다.)
+
+            form 내의 submit 버튼 클릭시 action에 지정한 서버로 사용자가 입력한 값들이<br>
+            넘어가면서 요청됨(사용자가 입력한 값들은 key=value 세트로 전달)
+    </p>
+    search?id=kkk&pw=1234&age=24(id가 key, kkk가 value값이다)
+    웹에서 입력한 값들이 서버나 db로 넘어갈때 위의 양식으로 넘어간다.
+    
+    <form action = "search.jsp" method="post">
+        검색어 : <input type="text" name="keyword">
+        <input type="submit"value="검색">
+    </form>
+<!-- 
+    //get
+    이 상태로 웹에서 실행 후 검색에 아무거나 치고 검색 버튼을 눌렀을떄 
+    file:///C:/KMS/frontwork/html5/search.jsp?keyword=fsdfsdfsdfsdf
+    이렇게 입력한 값이 url에 뜬다.
+
+    //post
+    post로 했을 경우
+    file:///C:/KMS/frontwork/html5/search.jsp
+    이렇게 뜬다.
+-->
+
+<h3>fieldset : 그룹을 묶는 태그(기본적인 테두리 존제)</h3>
+<h3>legend : 해당 그룹의 제목을 붙이는 태그</h3>
+
+<form action="">
+    <fieldset>
+        <legend>
+            제목1
+        </legend>
+        입력1 : <input type="text" name="text1"><br>
+        입력2 : <input type="text"><br>
+        <!-- type 속성의 기본값은 "text" type이 없으면 기본값임-->
+    </fieldset>
+    <fieldset>
+        <legend>제목2</legend>
+        입력3 : <input type="text"><br>
+        입력4 : <input type="text">
+    </fieldset>
+
+</form>
+<hr>
+<h2> text와 과녈ㄴ된 input태그의 타입</h2>
+<form action="" >
+    <h3>type="text"</h3>
+    <p>
+            -한줄짜리 텍스트를 입력할 수 있는 텍스트 상자(기본값 또한 input type의 기본값)
+    </p>
+     아이디 : <input name="userId" placeholder="아이디를 넣으세요" maxlength="12" required>
+     <!-- placeholder는 회색으로 예시를 나타낸다./// required는 반드시 넣으세요-->
+
+     <h3>type="password</h3>
+     <p>
+        - 비밀번호를 입력할 수 있는 텍스트 상자
+     </p>
+
+     비밀번호 : <input type="password" name="userPW" placeholder="영문, 숫자, 특수문자만 가능" maxlength="15" required>
+
+     <h3> type="search | url | email | tel"</h3>
+     <p>
+        -겉모습은 일반 텍스트상자와 유사하지만 각각의 정보에 맞게 세분화된 기능 제공
+        <!-- 
+        url은 입력하려고 누르면 폰에서 자판이 뜨고, 
+        number 타입은 숫자판이 뜬다.
+        email 타입은 @ 표시가 있는지 없는지 확인한다. 
+        -->
+     </p>
+
+     검색 : <input type="search" name="q">
+     <br>
+
+     홈페이지 : <input type="url" name="homepage">
+     <br>
+
+     이메일 : <input type="email" name="email">
+     <br>
+     
+     전화번호 : <input type="tel" name="tel">
+     <br>
+     <input type="submit">
+</form>
+
+<hr>
+<h2>숫자와 관련된 input 타입</h2>
+<form action="">
+    <h3>type="number"</h3>
+    <p>
+        - 숫자값만 작성가능한 텍스트 상자<br>
+        - 스핀박스가 표시됨(스핀박스 : 위/아래 와살표 버튼 생성 가능)
+    </p>
+
+    수량 : <input type="number" name="amount" min="0" max="100" step="5" value="0">
+    <!-- value는 초기 값 ,
+     step는 스핀박스 한번 클릭했을때 올리는 단위 단, 입력한 값의 배수만 입력 가능하다 -->
+
+     <br>
+     <h3>type="range"</h3>
+     <p>
+        - 슬라이드바를 통해 숫자 지정 가능
+
+     </p>
+
+     점수 : <input type="range" name="score" min="0" max="100" step="10">
+
+     <br><br>
+     <input type="submit">
+
+</form>
+
+<h2>날씨및 시간</h2>
+<form action="">
+    <h3>type="date | month | week | time | datetime-local</h3>
+
+    <p>연도, 월, 일을 입력받을 수 있는 텍스트 상자</p>
+    date : <input type="date" name="dateIn">
+
+    <p>연도, 월까지만 입력받을 수 있는 텍스트 상자</p>
+    month : <input type="month" name="monthIn">
+
+    <p>해당 년도의 몇번째 주인지 입력받을 수 있는 텍스트 상자</p>
+    week : <input type="week" name="weekIn">
+
+    <p>오전|오후 시 분을 입력받을 수 있는 텍스트 상자</p>
+    time : <input type="time" name="timeIn">
+
+    <p>연, 월, 일, 오전/오후, 시, 분들을 입력 받을 수 있는 텍스트 상자</p>
+
+    datetime-local : <input type="datetime-local" name="dtIn">
+    <br>
+    <input type="submit" value="서버로 전송">&emsp;
+    <!-- submit의 value는 전송버튼에 이쓴ㄴ 말 변경이다. -->
+    <input type="reset" value="초기화">
+</form>
+
+<h2>라디오버튼과 체크박스 관련 input 태그의 타입</h2>
+
+<form action="test.do">
+    <h3>라디오버튼(type="radio")</h3>
+    
+    <p>
+        - 여러개의 값들 중 오로지 1개만 선택해야할 때
+        - **name 속성값이 같아야 1개가 선택**
+        - 서버로 value의 값이 전송됨
+    </p>
+    <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" value="M" id="rm"> 
+        <label for="rm">남자</label>&emsp;
+        <input type="radio" name="gender" value="F" id="rf"> 
+        <label for="rf">여자</label>&emsp;
+        <input type="radio" name="gender" value="X" id="rx"> 
+       <label for="rx">선택안함</label>&emsp;
+        <input type="submit">
+        
+        <!-- 
+            label을 사용해서 라디오버튼 옆 글씨를 눌러도 선택이 되도록 할 수 있다.     
+            -->
+        </form>
+    </fieldset>
+<form action="test.todo">
+
+    <br><br>
+    <fieldset>
+        <legend>
+        고향 
+        </legend>
+    <input type="radio" name="hometown" value="서울" id="서울"> 
+    <label for="서울">서울</label>
+    <input type="radio" name="hometown" id="경기" value="경기">
+    <label for="경기">경기</label>
+    <input type="radio" name="hometown" id="기타" value="기타">
+    <label for="기타">기타</label>
+    <input type="submit">
+</form>
+</fieldset>
+
+<hr>
+<form action="test.do">
+    <h3>체크박스(type="체크박스")</h3>
+    <p>
+        -여러개의 값들 중 여러개를 선택하고자 할때
+        - 서버로 value의 값이 전송됨
+    </p>
+    취미 : 
+    <input type="checkbox" name="hobby" value="reading" id="reading">
+    <label for="reaging">독서</label>&emsp;
+    <input type="checkbox" name="hobby" value="workout" id="workout">
+    <label for="workout">운동</label>&emsp;
+    <input type="checkbox" name="hobby" value="movie" id="movie">
+    <label for="movie">영화 감상</label>&emsp;
+
+    <input type="submit">&emsp;
+    <input type="reset">
+</form>
+
+<hr>
+<h2>추가적인 input 태그의 삽입</h2>
+<form action="test.do">
+    <h3>type="color"</h3>
+    <p>
+            -색상을 선택할 수 있는 input타입
+    </p>
+    색상선택 : <input type="color" name="color">
+    <br><br>
+    <h3>type="file"</h3>
+    <p>
+        -첨부하고자 하는 파일을 선택할 수 있는 input 타입
+    </p>
+    첨부파일 : <input type="file" name="uploadfile">
+
+    <br>
+    <h3>type="hidden"</h3>
+    <p>
+        - 특정값을 화면에 노출시키지 않고 서버로 전송해야하는 정보가 있을때 사용
+        (사용자에게 보여주지 않아야 하는 정보)
+    </p>
+    <input type="hidden" name="pageNum" value="3">
+
+    <h3>type="submit | reset | button"</h3>
+
+    <p>
+        - submit : 서버로 form 안의 들어있는 모든 값들을 전송
+        - reset : form 안의 값들을 초기화
+        - button : 일반버튼(사용자 정의 버튼으로 자바스크립트에서 사용) 
+
+
+    </p>
+    <input type="submit">
+    <input type="reset">
+    <input type="button" value="이건 버튼">
+
+    <h3>button[type="submit | reset | button"]</h3>
+    <button type="submit">제출</button>
+    <button type="reset">초기화</button>
+    <button type="button">일반버튼</button>
+    <!-- 타입을 생략하면 submit 버튼 -->
+    <!-- button의 기본값은 submit이다. -->
+
+
+
+    <input type="submit"> <br>
+    <input type="reset">
+
+
+</form>
+<br>
+<h2>select 태그와 option태그</h2>
+<p>
+    - 사용자에게 직접 키보드로 입력받는것이 아니라 내가 제시한 목록들 중 선택할 수 있는 태그<br>
+    - 서버에 전송시 선택된 option의 값이 넘어감 
+</p>
+
+<form action="test.do">
+    국적 : 
+    <select name="national" id="">
+        <option value="ko">한국</option>
+        <option value="us">미국</option>
+        <option value="uk">영국</option>
+        <option value="ru">러시아</option>
+        <option value="ect">기타</option>
+    </select>
+    <button>제출</button>
+
+    <select name="점매추" id="lunch" multiple>
+        <option value="돈까스">돈까스</option>
+        <option value="국밥">국밥</option>
+        <option value="자장면">짜장면</option>
+        <option value="떡볶이">떡볶이</option>
+        <option value="냉면">냉면</option>
+        <option value="제육볶음">제육볶음</option>
+    </select>
+    <button>제출</button>
+    <br><br>
+    
+    수강신청 :
+    <select name="수강신청" id="">
+        <optgroup label="공과대학"> 
+            <option value="archi">건축학과</option>
+            <option value="machanic">기계공학과</option>
+            <option value="mebt">의료생명공학과</option>
+            <option value="meit">의약공학과</option>
+            <option value="chemistry">화학과</option>
+        </optgroup>
+        <optgroup label="인문대학">
+            <option value="history">사학과</option>
+            <option value="lang">어문학과</option>
+            <option value="philo">철학과</option>
+        </optgroup>
+    </select>
+    <br><br>
+    
+    <h3>datalist : html5에서 새로 추가된 기능</h3>
+    <p>
+        - 내가 제시한 목록 중에서 선택도 할 수 있고, 만약 목록에 없다면 직접 입력 가능
+    </p>
+    
+    내가 제일 가고 싶은 여행지 :
+    <input name="travel" list="travelList">
+    <datalist id="travelList">
+        <option value="ko">한국</option>
+        <option value="uk">영국</option>
+        <option value="us">미국</option>
+    </datalist>
+    <button>제출</button>
+    
+    
+    
+    
+</form>
+    
+    
+
+
+<br><br><br><br><br><br><br><br><b><br><br></b>
+
+
+
+
+
+
+</body>
+</html>
