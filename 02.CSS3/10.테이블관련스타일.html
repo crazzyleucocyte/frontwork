@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 관련 스타일</title>
+    <style>
+        table{
+            border: 1px solid;
+            /* border-collapse: collapse;  // 표의 각 셀 사이의 간격을 업애주는 코드 기본값은 separate */
+            border-collapse: collapse;
+            /* 각 셀 사이의 간격을 늘려주거나 줄여주는 코드 border-spacing*/
+            border-spacing: 10px;
+            width: 100px;
+            /* table-layout: fixed; : 셀에 많은 양의 글씨가 들어와도 테이블의 크기를 고정시켜주는 코드 */
+            table-layout: fixed;
+        }
+        thead,tfoot{
+            background-color: rgb(31, 69, 112);
+            
+        }
+        tbody{
+            background-color: rgb(77, 135, 185);
+        }
+        th,td{
+            width: 150px;
+            height: 20px;
+            padding: 5px;
+            text-align: center;
+            vertical-align: middle;
+            /* vertical-align : 테이블에서만 사용 가능 top | middle(기본값) | bottom */
+            border: 3px dotted rgb(228, 195, 89);
+            /* word-break: break-all : 많은 양의 문자가 들어왔을떄 셀의 크기에 맞게 중간에 끊어서 내림으로써 셀 밖으로 문자가 나가는걸 막아줌 */
+            word-break: break-all;
+
+        }
+        .borderTop{
+            border-top: 1px double rgb(136, 43, 43);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>테이블 관련 스타일</h1>
+    <table >
+        <caption>[표 1] 웹 브라우저의 종류</caption>
+        <thead>
+            <tr>
+                <th>브라우저명</th>
+                <th>제조사</th>
+                <!-- <th>홈페이지</th> -->
+                 <th>HompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompageHompage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Edge</td>
+                <td>Ms</td>
+                <td>https://microsoft</td>
+            </tr>
+            <tr>
+                <td>Chrome</td>
+                <td>Google</td>
+                <td>https://google.com</td>
+            </tr>
+            <tr>
+                <td>Safari</td>
+                <td>Apple</td>
+                <td>https://apple.com</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="borderTop">총 브라우저 수</td>
+                <td class="borderTop">3</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+</body>
+</html>

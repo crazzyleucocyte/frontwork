@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 우선순위</title>
+    <style>
+        h1{
+            background-color: purple;
+        }
+        h1{
+            background-color: rebeccapurple;
+        }
+        /* 우선순위가 가장 낮은 태그 선택자에 !important를 해주니 적용되었다. */
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: teal !important;
+            color: red;
+        }
+        #id1{
+            background-color: rgb(78, 42, 37);
+        }
+        .class1{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <h1>선택자 우선순위</h1>
+    <p>
+        기본적으로 scc는 위에서부터 아래로 적용됨<br>
+        동일한 요소를 다양한 건택자로 css가 부여된 경우 우선순위에 따라 적용됨<br>
+        태그선택자 -> 클래스 선택자-> 아이디 선택자 -> 인라인스타일 방식 -> !important
+    </p>
+    <div class="class1" id="id1"style= "background-color:red;">우선순위 테스트</div>
+
+
+
+
+
+</body>
+</html>

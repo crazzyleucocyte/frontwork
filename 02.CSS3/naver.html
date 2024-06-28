@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #naver{
+            border: 1px solid rgb(3, 199, 90);
+            border-radius: 30px;
+            width: 500px;
+            height: 50px;
+            text-align: center;
+            /* vertical-align: middle ; */
+            line-height: 50px;
+            font-size: 25px;
+        }
+        #searchNaver{
+            width: 400px;
+            height: 30px;
+            border: white;
+            font-size: 23px;
+        }
+        #searchNaver:focus{
+            /* border:  0px ; */
+            /* background-color: red; */
+            outline: none;
+        }
+        #bold{
+            border: 15px;
+            color: rgb(3, 199, 90) ;
+        }
+        #돋보기{
+            position: absolute;
+            top: 42px;
+            left: 475px;
+        }
+        #키보드{
+            position: absolute;
+            top: 49px;
+            left: 435px;
+        }
+        #img{
+            background-image: url("../02.CSS3/resources/img/키보드.png");
+            width: 40px;
+            height: 30px;
+            outline: none;
+            border: none;
+            z-index: 2;
+        }
+        #img:hover{
+            background-color: none;
+            width: 40px;
+            z-index: 3;
+        }
+        button:hover{
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <br><br>
+    <div id="naver">
+        <b id="bold">N</b>
+        <input type="search" id="searchNaver" placeholder="검색어를 입력해주세요">
+        <img src="resources/img/키보드.png" alt="" id="키보드">
+        <img src="resources/img/돋보기.png" alt="" id="돋보기">
+    </div>
+    <input type="submit" name="enter" id="img">
+    <button  id="img"> d </button>
+    <button> dfsfs</button>
+</body>
+</html>

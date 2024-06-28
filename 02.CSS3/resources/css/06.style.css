@@ -1,0 +1,111 @@
+/* ==================================1. color================================ */
+#c{
+    /* color : red;
+    color : #0100ff;
+    color : rgb(201,0,167);
+    color : rgba(201,0,167,1); */
+    /* color : hsl(98, 69%, 42%) ;h: 색상값(0~360), s: 채도(%), l : 명도(%) */
+    color : hsla(98,69%,42%,1);
+}
+/* ==================================2.text -decoration================================ */
+
+#td1{
+    text-decoration: overline;
+}
+
+#td2{
+    text-decoration: line-through;
+}
+
+#td3{
+    text-decoration: underline;
+}
+
+#google{
+    text-decoration: underline ;
+}
+
+/* ==================================3.text -transform================================ */
+
+#tt1{
+    text-transform: uppercase;
+}
+#tt2{
+    text-transform: lowercase;
+}
+#tt3{
+    text-transform: capitalize;
+}
+
+/* ==================================4.text -shadoe================================ */
+
+.shadow{
+    font-size: 50px;
+    font-weight: 900;
+}
+#ts1{
+    color:red;
+    text-shadow: 5px 5px 5px rgb(255, 48, 48);
+    text-shadow: -5px -5px 5px rgb(217, 79, 252);
+
+}
+#ts2{
+    color : white;
+    text-shadow: 4px 2px 3px rgb(105, 106, 199),
+                  10px 2px 10px rgb(85, 7, 131);
+}
+#ts3{
+    text-shadow: 0px 5px 4px rgb(216, 72, 72)
+                 , 0px 5px 15px rgb(236, 136, 96);
+}
+
+/* ==================================5.text -align================================ */
+
+#justify{
+    text-align: justify;
+    text-shadow: 2px 2px 3px rgb(104, 53, 138),
+                 2px 2px 6px rgba(177, 33, 33, 0.5);
+}
+#right{
+    text-align: right;
+}
+#center{
+    text-align: center;
+}
+
+/* ==================================5.line-height================================ */
+
+#line1{
+    line-height: 30px;
+}
+#line2{
+    line-height: 3em;
+}
+#line3{
+    line-height: 0.1%;
+    font-size: 30px;
+}
+/* 박스의 정 가운데에 글자를 위치 시키는 방법 */
+#test{
+    background-color: blueviolet;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

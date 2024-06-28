@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테두리관련스타일</title>
+    <style>
+        div{
+            width: 90px;
+            height: 90px;
+            border: 3px;
+            margin:10px;
+            padding: 10px;
+            background-color: lightblue;
+            
+        }
+    </style>
+</head>
+<body>
+
+<h1>테두리 관련 스타일</h1>
+<pre>
+    선택자 {
+        * 테두리 스타일
+        border [-위치]-style:none | dotted | dashed | solid(기본값) | double | ridge | inset | outset
+        * 테두리의 두께
+        border -[-위치] width : 테두리 두께;
+
+        *테두리 색상
+        border [-위치]-color : 테두리 색상;
+
+        *테두리 스타일 , 뚜께, 색상을 한꺼번에
+        border : 두꼐 수타일 [색상];
+        
+        *테두리 모서리를 동그랗게
+        border - radius : 반지름값;
+
+        *박스에 그림바 효과
+        bos-shadow : 가로거리(X)세로거리(y) 흐림정도
+    
+    }
+</pre>
+<div id="test1">test1</div>
+<div id="test2">test2</div>
+<div id="test3">test3</div>
+<div id="test4">test4</div>
+<div id="test5">test5</div>
+<div id="test6">test6</div>
+<div id="test7">test7</div>
+<div id="test8">test8</div>
+<div id="test9">test9</div>
+<div id="test10">test10</div>
+<button id="btn">로그인</button>
+<input type="submit" id="inputBtn" value="로그인">
+<!-- ----------------------------STYLE---------------------------- -->
+<Style>
+dif{
+    margin: 10px;
+    padding: 10px;
+    background-color: red;
+}
+#test1{
+    border-style: dotted;
+    border-top-width: 10px;
+}
+#test2{
+    box-shadow: 5px 5px 10px 5px gray;
+}
+#test3{
+    /* 위아래는 dashed로 좌우는 double로 똑같이 시계방향으로 돌아간다.*/
+    border-style: dashed double;
+
+}
+#test4{
+    border-style: dashed;
+    border-left-color: blueviolet;
+}
+#test5{
+    border-style: groove;
+    border-width: 20px;
+    border-color: rgb(181, 137, 223);
+}
+#test6{
+    border-style: ridge;
+    border-width: 20px;
+}
+#test7{
+    border-style: outset;
+    border-width: 20px;
+}
+#test8{
+    border-style: inset;
+    border-width: 20px;
+}
+#test9{
+    border-style: solid;
+    border-width: 20px;
+    border-radius: 80px 50px 20px 5px;
+    /* border-top-left-radius: 100px; */
+    border-top-right-radius: 20px;
+    /* border-bottom-left-radius: 100px; */
+}
+#test10{
+border: 10px dotted lightcyan;
+
+}
+#btn, #inputBtn{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(241, 94, 94, 0.753);
+    color: forestgreen;
+}
+#btn:hover, #inputBtn:hover{
+    background-color: lightgreen;
+}
+
+
+
+
+
+</Style>
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

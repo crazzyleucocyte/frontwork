@@ -1,0 +1,64 @@
+body{
+    background-color: bisque;
+    background-color: rgba(241, 241, 165, 0.884);
+}
+
+#div-bg{
+    background-color:rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border: 1px solid purple;
+    width: 50%;
+    /* background-clip: content-box; */
+}
+
+.div-test{
+    margin: 30px;
+    background-color: rgb(233, 153, 169,0.6);
+    border: 3px dotted rebeccapurple;
+    padding: 20px;
+}
+#id1{
+    background-clip: border-box;
+}
+
+#id2{
+    background-clip: padding-box;
+}
+#id3{
+    background-clip: content-box;
+}
+
+#bg-img{
+    border: 1px solid;
+    width: 100%;
+    height: 532px;
+    background-image: url("../img/유럽3.jpg");
+    background-repeat: no-repeat;
+    background-size: auto; /* 원래 이미지 사이즈 그대로 출력 */
+    background-size:  contain; /* 원래 이미지 사이즈 중 가로나 세로가 맞도록 그림 사이즈 조정 */
+    background-size:  cover; /* 이미지가 가로나 세로에 빈 곳이 없도록 그림 사이즈 조정 */
+    background-size: 300px;  /* 가로 길이(세로는 원래 이미지의 비율에 맞춰서 자동으로 조절됨)*/
+    background-size: 300px 300px;  /* 가로 길이 세로길이*/
+    background-size: 100%;  /* 창을 늘리거나 줄이면 그림 사이즈도 같이 줄어든다.*/
+    background-size: 100% ;  /* 가로 길이 세로길이*/
+
+    background-position: left top; /* 기본값*/
+    background-position: center bottom;
+    background-position: center center;
+    background-position: 20% 30%;
+    background-attachment: scroll;/*기본값*/
+    background-attachment: fixed;/* 이미지 고정 */
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

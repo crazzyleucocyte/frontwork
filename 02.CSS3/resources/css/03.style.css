@@ -98,6 +98,19 @@ div[name*=am]{
 #hover-test:active{
     background-color: lightsalmon;
 }
+#link:hover{
+    color: brown;
+}
+#link:active{
+    color: cornflowerblue;
+}
+#link:link{
+   color: blue;
+}
+#link:visited{
+    color: coral;
+}
+
 
 /* ==================================5. 상태 선택자================================ */
 
@@ -123,6 +136,120 @@ button:enabled{
 button:disabled{
     background-color: rgb(74, 57, 114);
 }
+
+
+/* ==================================6. 일반구조 선택자================================ */
+
+#summer>p:first-child{
+    background-color: red;
+}
+
+#summer :last-child{
+    color: blue;
+}
+
+#summer :nth-child(2){
+    background-color: dimgrey;
+}
+/* 짝수번째 */
+#summer :nth-child(2n){
+    font-size: larger;
+}
+/* 홀수번째 */
+#summer :nth-child(2n+1){
+    font-size:smaller;
+}
+
+/* ==================================7. 형태 구조 선택자================================ */
+/* 첫번쨰는 div인데 p태그로 잘못 기재했다고 인식 안됨. */
+/* first-child는 첫번쨰가 중요하다 */
+#fall p:first-child{
+    font-size: 33px;
+}
+#fall p:first-of-type{
+    background-color: red;
+}
+
+#fall p:last-of-type{
+    background-color: rgba(40, 42, 156, 0.781);
+}
+
+#fall p:nth-of-type(3){
+    background-color: rgba(84, 85, 100, 0.781);
+}
+#fall p:nth-of-type(2n){
+    background-color: rgba(159, 179, 121, 0.781);
+}
+#fall p:nth-of-type(2n+1){
+    background-color: rgba(88, 28, 85, 0.781);
+}
+
+/* ==================================8. 형태 구조 선택자================================ */
+#winter :not(p:first-of-type){
+    color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

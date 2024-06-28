@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>식단표</title>
+    <style>
+        table{
+            width: 800px;
+            height: 300px;
+            border: 5px solid rgba(255, 255, 255, 0.884);
+          
+            border-collapse: collapse;
+            font-size: 18px;
+            
+            
+        }
+        
+        td{
+            text-align: center;
+            border: 3px ridge rgba(255, 255, 255, 0.767);
+            background-color: rgb(171, 191, 236);
+            
+        }
+        .head>td{
+            background-color: rgb(122, 155, 231);
+            font-size: x-large;
+            border: 1px solid;
+          
+        }
+
+
+    </style>
+    
 </head>
 <body>
-    <table border="1">
+    <table >
         <caption>더조은 식단표</caption>
         <thead>
-            <tr>
+            <tr class="head">
                 <td ><b>월</b></td>
                 <td ><b>화</b></td>
                 <td ><b>목</b></td>
@@ -20,6 +48,7 @@
             </tr>
         </thead>
         <tbody>
+            <tr ><td style="border: 0px; background-color: white;" colspan="7"></td></tr>
             <tr>
                 <td colspan="2">쌀밥</td>
                 <td colspan="3">잡곡밥</td>

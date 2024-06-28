@@ -90,10 +90,16 @@
                         선택자: hover{
                             스타일 속성: 값;
                         }
+                        *링크 태그에서 방문하기 후의 스타일 부여
+                        선택자 : visited{
+                            스타일속성: 값;
+                        }
                 </pre>
 
                 <div id="active-test" class="area">active테스트</div>
                 <div id="hover-test" class="area">hover테스트</div>
+                <br><br>
+                <a href="https://naver.com" id="link" target="_blank">네이버</a>
 
 
                 <h2>5.상태 선택자</h2>
@@ -135,6 +141,137 @@
                 </pre>
                 <button>클릭가능</button>
                 <button disabled>클릭 불가능</button>
+
+
+                <h2>6. 일반 구조 선택자</h2>
+                <p>
+                    특정한 위치에 있는 태그를 선택되는 선택자(일반적으로 자손, 후손턴택자와 함께 사용)
+                </p>
+                <pre>
+                    :first-child -> 형제관계태그중 첫번째 태그 선택
+                    :last-child -> 형제관계태그중 마지막 태그 선택되는
+                    :nth-child(수열) -> 형제관계태그중 n번째 태그 선택
+                    :nth-last-child(수열) -> 형제관계태그 중 뒤에서 수열번째 태그 선택
+                    
+                </pre>
+                <!-- div#summer>p{여름$}*5 -->
+
+                <div id="summer">
+                    <p>여름1</p>
+                    <p>여름2</p>
+                    <p>여름3</p>
+                    <p>여름4</p>
+                    <p>여름5</p>
+                </div>
+
+                h2>7. 형태 구조 선택자</h2>
+                <p>
+                    특정한 위치에 있는 태그를 선택되는 선택자(태그별로 구분)
+                </p>
+                <pre>
+                    :first-of-type-> 형제관계태그중 첫번째 위치한 특정한 태그 선택
+                    :last-of-type -> 형제관계태그중 마지막에 위치한 특정한 태그 선택
+                    :nth-of-type(수열) -> 형제관계태그중 n번째 위치한 특정한 태그 선택
+                    :nth-last-of-type(수열) -> 형제관계태그 중 뒤에서 n번째에 위치한 특정한 태그 선택
+                    
+                </pre>
+
+                <div id="fall">
+                    <div>div1</div>
+                    <p>가을1</p>
+                    <p>가을2</p>
+                    <div>div1</div>
+                    <p>가을3</p>
+                    <div>div1</div>
+                    <p>가을4</p>
+                    <p>가을5</p>
+                </div>
+
+                <h2>8. 부정 선택자</h2>
+                <p>
+                    특정 선택 요소를 제외한 나머지 요소들이ㅡ 스타일 적용
+                </p>
+                <pre>
+                    요소:not(선택자)
+                    
+                </pre>
+
+                <div id="winter">
+                    <div>div1</div>
+                    <p>겨울1</p>
+                    <p>겨울2</p>
+                    <div>div1</div>
+                    <p>겨울3</p>
+                    <div>div1</div>
+                    <p>겨울4</p>
+                    <p>겨울5</p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <ol class="class1">
             <li class="clas1">

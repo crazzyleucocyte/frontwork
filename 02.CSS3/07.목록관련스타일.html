@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록 관련 스타일</title>
+</head>
+<body>
+    <h1>목록 관련 스타일(list~)</h1>
+    
+    <h3>list-style-type : 블릿기호를 변경시켜줄 때 사용</h3>
+    <h3>list-style-image :  블릿기호로 이미지를 적용할 떄 사용</h3>
+    <h3>list-style-position : 블릿기호의 위치를 조정할 때 사용</h3>
+
+    <pre>
+        *순서가 없는 목록(ul)
+        선택자 {
+            list-style-type : desc(기본값, 까만 동그라미) | circle(빈 동그라미) | squar(네모) | none;
+
+        }
+
+        *순서가 있는 목록(ol)  잘 사용하지 않고 그냥 type="i" or type="a"이렇게 쓰는게 편하니깐 이렇게 쓰자
+        선택자{
+            list-style-type : decimal(기본값) | decimal-leading-zero;
+            list-style-type : lower-alpha | upper-alpha
+            list-style-type : lower-roman | upper-roman
+        }
+    </pre>
+
+    <h4>순서가 없는 목록</h4>
+    <ul id="ul1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ul>
+
+    <h4>순서가 있는 목록</h4>
+    <ol id="ol1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+    </ol>
+
+    <!-- ----------------------------STYLE---------------------------- -->
+    <style>
+        #ul1{
+            list-style-type: circle;
+            list-style-type: square;
+            list-style-type : none;
+            font-size: 30px;
+            list-style-image: url(resources/img/안드로이드_icon.png) ;
+        }   
+
+        #ol1{
+            list-style-type:  decimal-leading-zero;
+            list-style-type: lower-alpha;
+            list-style-type: upper-roman;
+            list-style-position: inside; /*outside가 기본값이다*/
+        }   
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

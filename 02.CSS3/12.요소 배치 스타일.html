@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 배치 스타일</title>
+</head>
+<body>
+<!--     
+    블럭요소 : 한줄로 영역을 차지하는 요소
+    인라인 요소 : content부분만 영역을 차지하는 요소
+
+    *요소영역 : content영역 + padding영역 + border영역
+    *요소 바깥쪽 영역 : margin영역
+ -->
+    <h1>요소 배치 스타일</h1>
+    <p>
+        기본적으로 내용을 차지하는 content영역의 가로, 세로길이 조절
+
+    </p>
+<h4>고정크기(px)</h4>
+<div class="size-test" id="test1"></div>
+
+<h4>고정크기(%)</h4>
+<div id="test2" class="size-test"></div>
+
+<!-- -----------------------------------------------style------------------------------------------------------ -->
+<style>
+    .size-test{
+        border : 10px solid red
+    }
+    #test1{
+        width: 400px;
+        height: 200px;
+    }
+    #test2{
+        width: 50%;
+        height: 150;
+    }
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    <h1>display : 화면 배치 방법</h1>
+
+    <pre>
+        선택자{
+            display: inline | block | inline-block
+        }
+    </pre>
+    <!-- .display-test.inline*5 -->
+    <h3>display : inline</h3>
+    <div class="display-test inline red">첫번쨰</div>
+    <div class="display-test inline yellow">두번쨰</div>
+    <div class="display-test inline pink">세번쨰</div>
+    <div class="display-test inline green">네번쨰</div>
+    <div class="display-test inline purple">다섯번째</div>
+
+    <p><b>
+        display :inline만 하게 되면 width와 height의 스타일 속성은 적용되지 않음
+    </b>
+    </p>
+
+<!-- -----------------------------------------------style------------------------------------------------------ -->
+<style>
+    .display-test{
+        border:1px solid;
+        width: 150px;
+        height: 150px;
+    }
+    .red{background-color: lightcoral;}
+    .yellow{background-color: lightyellow;}
+    .pink{background-color: lightpink;}
+    .green{background-color: lightgreen;}
+    .purple{background-color: rgb(184, 128, 184);}
+
+
+    /* div가 인라인 형태로 바뀌어 가로, 세로 폭이 적용되지 않는다. */
+    .inline{
+        display: inline;
+    }
+
+    /* div가 inline 형태로 이어붙게 되지만 가로, 세로 폭 적용은 된다. */
+    .inline-block{
+        display: inline-block;
+    }
+    .block{
+        display: block;
+    }
+
+
+</style>
+<h3>display : inline</h3>
+    <div class="display-test inline-block red">첫번쨰</div>
+    <div class="display-test inline-block yellow">두번쨰</div>
+    <div class="display-test inline-block pink">세번쨰</div>
+    <div class="display-test inline-block green">네번쨰</div>
+    <div class="display-test inline-block purple">다섯번째</div>
+
+
+    <h3>display : block</h3>
+    <div class="display-test block red">첫번쨰</div>
+    <div class="display-test block yellow">두번쨰</div>
+    <div class="display-test block pink">세번쨰</div>
+    <div class="display-test block green">네번쨰</div>
+    <div class="display-test block purple">다섯번째</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

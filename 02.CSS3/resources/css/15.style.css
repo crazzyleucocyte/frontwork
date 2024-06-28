@@ -1,0 +1,28 @@
+ul{
+    list-style-type: none;
+    padding: 0;
+    border: 2px solid;
+    height: 50vh;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    
+
+    /* 박스로 넘어가는것을 다음 줄로 넘겨서 박스 안을 채워줌 */
+    flex-wrap: wrap;
+
+    /* 배치할 위치를 정해줌 */
+    justify-content: center;
+
+    /* 여백의 비율을 맞춰줌 */
+    align-content: space-around;
+}
+li{
+    width: 100px;
+    height: 100px;
+    background-color: lavender;
+    border: 2px solid;
+    margin: 5px;
+    text-align: center;
+    line-height: 100px;
+}
