@@ -1,0 +1,85 @@
+#wrapper{
+    width: 950px;
+    margin: 0 auto;
+    border: 1px solid;
+}
+/* 헤더부분 */
+
+header{
+    width: 950px;
+    height: 120px;
+    background-color: beige;
+    border-bottom: 1px solid;
+}
+/* 헤더에 있는 글씨 
+.header-text{
+    
+}
+  아래처럼 하는게 나중에 보기 편하다 */
+header > .header-text{
+    font-size: 40px;
+    color: rgb(209, 124, 124);
+    text-align: center;
+    line-height: 120px;
+}
+#variable{
+    display: none;
+}
+/* 본문 */
+.content{
+    float: left;
+    width: 700px;
+    height: 400px;
+    background-color: cadetblue;
+}
+/* aside */
+.right-side{
+    float: right;
+    width: 240px;
+    height: 400px;
+    background-color: darkgrey;
+}
+/* footer */
+.footer{
+    /* float을 했던거를 다 푼다 */
+    clear: both;
+    height: 120px;
+    /* width: 950px; */
+    background-color: blueviolet;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

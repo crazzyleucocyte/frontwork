@@ -11,6 +11,7 @@
             width: 500px;
             height: 50px;
             text-align: center;
+            position: relative;
             /* vertical-align: middle ; */
             line-height: 50px;
             font-size: 25px;
@@ -27,48 +28,55 @@
             outline: none;
         }
         #bold{
-            border: 15px;
             color: rgb(3, 199, 90) ;
+            text-decoration: none;
+            font-weight: 1000;
+            font-size: larger;
         }
         #돋보기{
             position: absolute;
-            top: 42px;
-            left: 475px;
+            top: 7px;
+            left: 452px;
+            background-image: url(resources/img/돋보기.png);
+            outline: none;
+            border: none;
         }
+        
         #키보드{
-            position: absolute;
-            top: 49px;
-            left: 435px;
-        }
-        #img{
             background-image: url("../02.CSS3/resources/img/키보드.png");
             width: 40px;
             height: 30px;
             outline: none;
             border: none;
             z-index: 2;
+            position: absolute;
+            top: 12px;
+            left: 415px;
         }
-        #img:hover{
-            background-color: none;
+        #키보드:active{
+            background-image: url(resources/img/키보드active.jpg);
             width: 40px;
             z-index: 3;
         }
-        button:hover{
+        
+
+        /* button:active{
             background-color: black;
-        }
+        } */
 
     </style>
 </head>
 <body>
     <br><br>
     <div id="naver">
-        <b id="bold">N</b>
-        <input type="search" id="searchNaver" placeholder="검색어를 입력해주세요">
-        <img src="resources/img/키보드.png" alt="" id="키보드">
-        <img src="resources/img/돋보기.png" alt="" id="돋보기">
+        <form action="https://search.naver.com/search.naver">
+        <b><a href="https://naver.com" id="bold">N</a></b>
+        <input type="search" id="searchNaver" placeholder="검색어를 입력해주세요" name="query">
+        <button id="키보드"></button>
+        <label for="search"><img src="resources/img/돋보기.png" alt="" id="돋보기" ></label>
+        <input type="submit"id="search"  hidden  >
+    </form>
     </div>
-    <input type="submit" name="enter" id="img">
-    <button  id="img"> d </button>
-    <button> dfsfs</button>
+    
 </body>
 </html>

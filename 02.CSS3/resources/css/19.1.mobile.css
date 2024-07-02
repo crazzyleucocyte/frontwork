@@ -1,0 +1,50 @@
+/* 전체 */
+#wrapper{
+    width: 100%;
+}
+/* header */
+header {
+    height: 60px;
+    line-height: 60px;
+}
+/* 본문 */
+section{
+    height: 300px;
+    background-color: bisque;
+}
+/* aside */
+aside{
+    background-color: aquamarine;
+}
+/* footer */
+footer{
+    line-height: 50px;
+    height: 50PX;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

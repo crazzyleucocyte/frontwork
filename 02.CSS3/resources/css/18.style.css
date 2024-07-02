@@ -1,0 +1,124 @@
+#menu1{
+    background: url("../img/햄버거.jpg") no-repeat center;
+    float: left;
+    width: 64%;
+    /* height: 600px; */
+    background-size: cover;
+    background-position: center;
+}
+#menu4{
+    background: url("../img/맥주.jpg") no-repeat center;
+    float: right;
+    width: 35%;
+    height: 49%;
+    background-size: cover;
+}
+#menu2{
+    background: url("../img/치킨.jpg") no-repeat center;
+    background-size: cover;
+    float: left;
+    width: 64%;
+    
+}
+#menu2>h2,#menu3>h2{
+    color: black;
+    text-shadow: 0px 0px 4px black;
+
+
+}
+
+#menu3{
+    background: url("../img/스테이크.jpg") no-repeat center;
+    width: 78%;
+    float: left;
+    background-size: cover;
+    /* background-position: bottom; */
+    border-radius: 50px;
+    
+}
+#menu5{
+    background: url("../img/플래터.jpg") no-repeat center;
+    width: 78%;
+    float: right;
+    background-size: cover;
+    /* display: inline-block; */
+    
+}
+
+#place1{
+    background: url("../img/유럽1.jpg") no-repeat center;
+}   
+#place2{
+    background: url("../img/콜로세움.jpg") no-repeat center;
+    
+}#place3{
+    background: url("../img/풍경.jpg") no-repeat center;
+    
+}#place4{
+    background: url("../img/할슈타트.jpg") no-repeat center;
+    
+}#place5{
+    background: url("../img/스위스.jpg") no-repeat center;
+    
+}
+header{
+    width: 100%;
+    height: 70px;
+    border: 5px solid  rgb(197, 176, 218);
+    text-align: center;
+    /* line-height: 70px; */
+    padding-bottom: 10px;
+    /* padding-top: 20px; */
+    background-color: rgba(212, 174, 248, 0.575);
+    margin-bottom: 10px;
+    clear: both;
+}
+section div{
+    height: 500px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px;
+}
+#menus{
+    background-color: rgb(209, 182, 149);
+    height: 2030px;
+}
+#menutitle{
+    background-color: rgba(248, 218, 182, 0.637);
+    border: 5px solid  rgb(197, 176, 218);
+    border-color: white;
+    font-size: 3em;
+    height: 200px;
+
+}
+/* #menus{
+    display: flex;
+    /* flex-wrap: wrap; 
+    
+    } */
+.menu-item>h2{
+    padding-left: 10px;
+    text-shadow: 0px 0px 4px white;
+    color: bisque;
+    font-size: 3em;
+    font-weight: 100;
+}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

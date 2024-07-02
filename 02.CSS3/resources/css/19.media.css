@@ -1,0 +1,121 @@
+/* 
+    * css미디어 쿼리
+      : 미디어 쿼리는 단말기 유형, 화면해상도, 뷰포트 너비 드엥 따라 스타일을 적용 할 때 사용
+    
+    * 미디어 유형(단말기 유형)
+       -  all : 모든장치
+       -  print : 인쇄 결과물 및 출력 미리보기 화면에 표시중이 ㄴ문서
+       -  screen : 스크린 화면
+       -  speech : 음성 합성 장치
+
+    * 논리 연산자
+       - and
+       - not
+       - only
+       - 쉼표(,) : or를 의미 
+
+*/
+/* @media 뒤에 붙은 조건일떄 적용할 쿼리를 중괄호{}안에 작성한다. */
+@media screen and (max-width : 600px){
+/* 전체 */
+#wrapper{
+    width: 100%;
+}
+/* header */
+header {
+    height: 60px;
+    line-height: 60px;
+}
+/* 본문 */
+section{
+    height: 300px;
+    background-color: bisque;
+}
+/* aside */
+aside{
+    background-color: aquamarine;
+}
+/* footer */
+footer{
+    line-height: 50px;
+    height: 50PX;
+}
+}
+
+
+@media screen and (min-width:601px) and (max-width:999px){
+/* 전체 */
+#wrapper{
+    width: 100%;
+}
+/* header */
+header {
+    height: 80px;
+    line-height: 80px;
+}
+/* 본문 */
+section{
+    float: left;
+    height: 300px;
+    width: 65%;
+    background-color: rgb(97, 139, 118);
+}
+/* aside */
+
+aside{
+    background-color: aquamarine;
+    height: 300px;
+    width: 34%;
+    float: right;
+}
+/* footer */
+footer{
+    clear: both;
+    height: 50PX;
+    line-height: 50px;
+}
+}
+
+
+@media screen and (min-width:1001px){
+/* 전체 */
+#wrapper{
+    width: 100%;
+}
+/* header */
+header {
+    height: 80px;
+    line-height: 80px;
+}
+/* 본문 */
+section{
+    float: right;
+    height: 300px;
+    width: 65%;
+    background-color: rgb(145, 128, 142);
+}
+/* aside */
+
+aside{
+    background-color: rgb(102, 141, 65);
+    height: 300px;
+    width: 34%;
+    float: left;
+}
+/* footer */
+footer{
+    clear: both;
+    height: 50PX;
+    line-height: 50px;
+}
+}
+
+
+
+
+
+
+
+
+
+

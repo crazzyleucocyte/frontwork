@@ -1,0 +1,15 @@
+header{
+    background-color: rgb(247, 139, 160);
+    text-align: center;
+}
+header>h1{
+    color: white;
+}
+section,aside{
+    padding: 1px;
+}
+footer{
+    background-color: blueviolet;
+    text-align: center;
+    color: burlywood;
+}

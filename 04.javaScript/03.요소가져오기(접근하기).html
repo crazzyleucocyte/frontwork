@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 가져오기(접근하기)</title>
+    <style>
+        .area{
+            border: 1px solid;
+            width: 300px;
+            height: 100px;
+        }
+        #field{
+            border: none;
+        }
+        #red{
+            background-color: black;
+            caret-color: black;
+            color-scheme: black;
+            stop-color: black;
+            flood-color: black;
+            column-rule-color: black;
+            border-color: brown;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>HTML 요소에 접근하기(해당 요소 객체 가져오기)</h1>
+
+    <h3>1) 아이디를 이용하여 요소 가져오기</h3>
+    <div class="area" id="area1"></div>
+    <button onclick="accessId();">아이디로 접근</button>
+    <script>
+        function accessId(){
+            //아이디로 요소 가져올때
+            //document.getElementbyId("아이디명") =>선택된 요소객체 반환
+            var area1=document.getElementById("area1");
+
+            //선택된 요소의 속성값을 가져온다거나 변경 가능
+            //속성 접근하고자 할때 => 선택된요소.접근하고자하는 속성
+            area1.innerHTML = "아이디로 접근 성공!<br>"
+
+            //선택된 요소에 스타일 변경
+            area1.style.backgroundColor="purple";
+            area1.style.color="lightpink";
+            area1.style.width="200px";
+            area1.style.height="200px";
+        }
+
+    </script>
+    <br><br>
+    <fieldset >
+        <legend>Range</legend>
+        <!-- oninput : input에 값이 들어오는 이벤트가 발생하면 호출 -->
+        <input type="range" step="0.1" name="score" min="0" max="100" value="0" 
+        oninput="document.getElementById('score').innerHTML=this.value;">
+        <button></button>
+
+        <span id="score" ></span>
+    </fieldset>
+    
+    <fieldset id="field" style="background-color: white;">
+        <legend>Range</legend>
+        <!-- oninput : input에 값이 들어오는 이벤트가 발생하면 호출 -->
+        <input type="range" step="1" name="red" id="red" min="0" max="255" value="0" oninput="changeColor2();"><br>
+        <input type="range" step="1" name="green" id="green" min="0" max="255" value="0" oninput="changeColor2();"><br>
+        <input type="range" step="1" name="blue" id="blue" min="0" max="255" value="0" oninput="changeColor2();"><br>
+        <input type="range" step="0.01" name="a" id="a" min="0" max="1" value="1"  oninput="changeColor2();">
+        <span id="rgbValue"></span>
+
+        <span id="score" ></span>
+    </fieldset>
+    <script>
+        function changeColor2(){
+            var field=document.getElementById('field');
+            var red = document.getElementById("red");
+            var green = document.getElementById("green");
+            var blue = document.getElementById("blue");
+            var A = document.getElementById("a");
+            var rgbvalue=document.getElementById("rgbValue");
+            var r=red.value;
+            var g=green.value;
+            var b=blue.value;
+            var a=A.value;
+            red.style.accentColor="rgb("+r+",0,0,1)";
+            green.style.accentColor="rgb(0,"+g+",0,1)";
+            blue.style.accentColor="rgb(0,0,"+b+",1)";
+            A.style.accentColor="rgb("+255*(1-a)+","+255*(1-a)+","+255*(1-a)+")";
+            
+            field.style.backgroundColor="rgb("+r+","+g+","+b+","+a+")";
+            rgbvalue.innerHTML=field.style.backgroundColor;
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </script>
+
+<br><br>
+<div class="area" id="area2" style="background-color: lightcyan rgb(196, 250, 250);"></div>
+<button onclick="changeColor();">클릭마다 색 변경</button>
+
+
+<script>
+    function changeColor(){
+        var divE1=document.getElementById("area2");
+        var r=divE1.style.backgroundColor;
+        console.dir(divE1);
+        console.log(area2.style.backgroundColor);
+        
+        //    if(area2.style.backgroundColor=="lightcyan"){
+            //     area2.style.backgroundColor
+            //    }
+            var r=Math.floor(Math.random()*245+1);
+            var g=Math.floor(Math.random()*245+1);
+            var b=Math.floor(Math.random()*245+1);
+            var a=(Math.random());
+            console.log(divE1.style.backgroundColor.value);
+            divE1.style.backgroundColor="rgb("+r+","+g+","+b+","+a+")";
+            var red = document.getElementById("red");
+            var green = document.getElementById("green");
+            var blue = document.getElementById("blue");
+            var A = document.getElementById("a");
+            red.value=r;
+            green.value=g;
+            blue.value=b;
+            A.value=a;
+            changeColor2();
+            
+        }
+        
+        </script>
+
+<h3>2)태그명을 이용하여 요소 가져오기</h3>
+<ul>
+    <li>목록1</li>
+    <li>목록2</li>
+    <li>목록3</li>
+    <li>목록4</li>
+    <li>목록5</li>
+</ul>
+<button onclick="accessTagName();">태그명으로 접근</button>
+
+<script>
+    function accessTagName(){
+            //태그명으로 가져왔을때 해당 태그가 여러개 일 수 있기 떄문에 배열로 들어온다.
+            //태그명으로 요소를 가져올 때
+            //document.getElementTagName("태그명") => 선택된 요소객체들이 배열에 담겨서 반환
+            var list = document.getElementsByTagName("li");  //[li요소객체, li 요소 객체]
+            console.log(list);
+            console.log("배열의 크기(선택된 li요소 갯수)"+list.length);
+            console.log(list[0]);
+            list[0].innerHTML="변경된 값";
+            var blueColor=50;
+            for(var i=0;i<list.length;i++){
+                list[i].innerHTML="안녕"+(i+1);
+                list[i].style.backgroundColor="rgb(206,242,"+blueColor+")"
+                blueColor+=50;
+            }
+
+        }
+    </script>
+
+    <h3>3)name 속성을 이용하여 요소 가져오기</h3>
+    <form action="">
+        <fieldset>
+            <legend>취미</legend>
+
+            <input type="checkbox" name="hobby" value="game" id="game">
+            <label for="game">게임</label>
+            <input type="checkbox" name="hobby" value="movie" id="movie">
+            <label for="movie">영화감상</label>
+            <input type="checkbox" name="hobby" value="read" id="read">
+            <label for="read">독서</label>
+            <input type="checkbox" name="hobby" value="workOut" id="workOut">
+            <label for="workOut">운동</label>
+
+        </fieldset>
+    </form>
+    <br>
+    <div class="area" id="area3"></div>
+    <button onclick="accessName();">name으로 접근</button>
+    <script>
+        function accessName(){
+            //name 속성값으로 요소 가져올때
+            //document.getElementsByName("name 속성값")=>선택된 요소들이 배열에 담겨 반환
+            var hobby = document.getElementsByName("hobby")
+            console.log(hobby);
+
+            var area3 = document.getElementById("area3");
+
+            for(var i=0;i<hobby.length;i++){
+                if(hobby[i].checked)
+                area3.innerHTML+=hobby[i].value + "<br>";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

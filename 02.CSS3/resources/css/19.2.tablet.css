@@ -1,0 +1,57 @@
+/* 전체 */
+#wrapper{
+    width: 100%;
+}
+/* header */
+header {
+    height: 80px;
+    line-height: 80px;
+}
+/* 본문 */
+section{
+    float: left;
+    height: 300px;
+    width: 65%;
+    background-color: rgb(97, 139, 118);
+}
+/* aside */
+
+aside{
+    background-color: aquamarine;
+    height: 300px;
+    width: 34%;
+    float: right;
+}
+/* footer */
+footer{
+    clear: both;
+    height: 50PX;
+    line-height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
