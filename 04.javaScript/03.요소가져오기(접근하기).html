@@ -205,6 +205,119 @@
         }
     </script>
 
+    <h3>4)클래스를 이용하여 요소 가져오기</h3>
+    <div class="test"></div>
+    <p class="test"></p>
+    <ul class="test">
+        <li></li>
+        <li></li>
+    </ul>
+    <pre class="test test1"></pre>
+
+    <button onclick="accessClass();">class로 접근</button>
+
+    <script>
+        function accessClass(){
+            //class 속성으로 요소 가져올때
+            //dovument.getElementsByClassName("class속성값") =>선택된 요소들을 배열에 담아서 반환
+            var arr=document.getElementsByClassName("test");
+            console.log(arr);
+            for(var i=0;i<arr.length;i++){
+                console.log(arr[i]);
+            }
+        }
+        </script>
+
+<h3>5) 내가 원하는 요소를 자유자재로 가져오기(선택자 활용)</h3>
+<div id="test2">테스트입니다.</div>
+<div class="test2">
+    <h2>안녕</h2>
+    <h2>좋은아침</h2>
+</div>
+<span>ㅎㅎㅎㅎ</span><br>
+
+<button onclick="accessSelector();">클릭</button>
+
+
+<script>
+    function accessSelector(){
+        //선택자를 이용하여 요소를 가져오고자 할 떄
+        //document.querySelector("선택자") => 선택된 첫번째 요소 객체 하나만 반환
+        //document.querySelectorAll("선택자") => 선택된 요소 객체들을 배열에 담아서 반환
+        
+        var divE1= document.querySelector("#test2");
+        var h2E1 = document.querySelector(".test2>h2");
+        console.log(h2E1);
+        var spanE1=document.querySelector(".test2+span");
+        console.log(spanE1);
+        var h2E2 = document.querySelectorAll(".test2>h2");
+        console.log(h2E2);
+        for(var i=0;i<h2E2.length;i++){
+            console.log(i+". "+h2E2[i]);
+        }
+    }
+
+
+
+
+    </script>
+
+<br>
+
+    <div>
+        <p class="cls1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquid molestiae, atque, dolore ea incidunt, in doloribus ipsum totam eveniet recusandae. Eligendi et, culpa voluptatum qui modi non pariatur nisi.
+        </p>
+        <p class="cls2" id="p">
+            Recusandae voluptate facilis suscipit voluptates voluptas fugit deserunt quasi placeat aperiam facere nulla voluptatum sapiente quisquam, consequuntur incidunt exercitationem officia quae expedita? Suscipit, natus tenetur aut excepturi pariatur ipsum voluptates.
+        </p>
+        <p class="cls1">
+            Voluptatem est quaerat quidem magni quam illum asperiores blanditiis deleniti a, quas nihil excepturi omnis distinctio voluptatum ipsa. Quasi assumenda in dolorum molestias sed ullam harum voluptatibus modi veritatis aliquam.
+        </p>
+    </div>
+    <button onclick="select();">querySelector</button>
+    <button onclick="selectAll();">querySelectorAll</button>
+
+<script>
+    function select(){
+        var p2 =document.querySelector("#p");
+        p2.style.color="lightcoral";
+    }
+    function selectAll(){
+        var p = document.querySelectorAll(".cls1");
+        for(var i = 0; i < p.length; i++){
+        p[i].style.color="lightpink";
+        }
+
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열과 숫자</title>
+    <style>
+        .area{
+            width: 300px;
+            border: 1px solid;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>문자열과 숫자</h1>
+    
+    <h3>* 문자열 관련 메소드</h3>
+
+    <button onclick="stringTest();">문자열 처리 메소드</button>
+    <div class="area" id="area1"></div>
+
+    <script>
+        function stringTest(){
+            const area1 = document.getElementById("area1");
+            // document.querySelector('#area1');
+
+            const str1 = 'Hello World';
+            // area1.innerHTML= 'str1 : ' + str1+ '<br>';
+            area1.innerHTML= `str1 : ${str1} <br>`;
+            area1.innerHTML+=`toUpperCase() : ${str1.toUpperCase()} <br>`;
+            area1.innerHTML+=`toUpperCase() : ${str1.toLowerCase()} <br>`;
+            area1.innerHTML+=`문자열의 길이 : ${str1.length}<br>`;
+            area1.innerHTML+=`--------------------------------------<br>`;
+
+            for( let i =0;i<str1.length;i++){
+                area1.innerHTML+= `${i}번 인덱스 : ${str1[i]}<br>`;
+                area1.innerHTML+= `${i}번 인덱스 : ${str1.charAt(i)}<br>`;
+            }
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
