@@ -32,37 +32,202 @@
             area1.innerHTML+=`toUpperCase() : ${str1.toLowerCase()} <br>`;
             area1.innerHTML+=`문자열의 길이 : ${str1.length}<br>`;
             area1.innerHTML+=`--------------------------------------<br>`;
-
+            
             for( let i =0;i<str1.length;i++){
-                area1.innerHTML+= `${i}번 인덱스 : ${str1[i]}<br>`;
-                area1.innerHTML+= `${i}번 인덱스 : ${str1.charAt(i)}<br>`;
+                area1.innerHTML+= `${i}번 인덱스 : ${str1[i]}  (type : ${typeof str1[i]})<br>`;
+                area1.innerHTML+= `${i}번 인덱스 : ${str1.charAt(i)}  (type : ${typeof str1.charAt(i)})<br>`;
             }
+            area1.innerHTML+=`--------------------------------------<br>`;
+            area1.innerHTML+=`앞에서부터 첫 'l'의 위치 : ${str1.indexOf('l')} (type : ${typeof str1.indexOf('l')})<br>`;
+            area1.innerHTML+=`뒤에서부터 첫 'l'의 위치 : ${str1.lastIndexOf('l')}  (type : ${typeof str1.lastIndexOf('l')})<br>`;
+            area1.innerHTML+=`앞에서부터 첫 'a'의 위치 : ${str1.indexOf('a')}  (type : ${typeof str1.indexOf('a')})<br>`;
+            //인덱스가 -1이 나왔다는거는 없다는 뜻
+
+            const str2 = '사과, 바나나, 복숭아, 포도';
+            const fruits = str1.split(',');
+
+            area1.innerHTML += `fruits : ${fruits}<br>`;
+            area1.innerHTML += `fruits의 자료형 : ${typeof(fruits)}`;
+            console.log(fruits);
+            
+        }
+    </script>
+
+    <br>
+
+    <h3> * 문자열 관련 html 메소드</h3>
+    <button onclick="stringHtmlTest();">문자열 HTML 메소드</button>
+    <div class="area" id="area2"></div>
+
+    <script>
+        function stringHtmlTest(){
+            const area2 = document.getElementById('area2');
+            const str = 'javascript';
+            area2.innerHTML = `str : ${str}<br>`;
+            area2.innerHTML += `bold() : ${str.bold()}<br>`;
+            area2.innerHTML += `italics() : ${str.italics()}<br>`;
+            area2.innerHTML += `굵고 기울임꼴 : ${str.bold().italics()}<br>`;
+            area2.innerHTML += `small() : ${str.small()}<br>`;
+            area2.innerHTML += `sub() 아래첨자 : ${str.sub()}<br>`;
+            area2.innerHTML += `sup() 위첨자 : ${str.sup()}<br>`;
+            area2.innerHTML += `link() 링크 : ${str.link('https://google.com')}<br>`;
 
         }
     </script>
 
+    <h3> * 숫자(수학) 관련 메소드</h3>
+    <button onclick="mathTest();">수학관련 메소드</button>
+    <div class="area" id="area3"></div>
+
+    <script>
+        function mathTest(){
+            const area3 = document.querySelector('#area3');
+
+            //자바스크립트에서 Math내장 객체 제공
+            area3.innerHTML = `-123의 절대값 : ${Math.abs(-123)}<br>`;
+            area3.innerHTML += `랜덤값 : ${Math.random()}  (type : ${typeof Math.random()})<br>`;
+            area3.innerHTML += `145.897의 반올림 : ${Math.round(145.897)} (type : ${typeof Math.round(145.897)})<br>`;
+            area3.innerHTML += `145.897의 반올림 : ${Math.round(145.897,1)}<br>`;  //반올림 위치 조정 불가
+            area3.innerHTML += `145.897의 버림 : ${Math.floor(145.897,1)}<br>`
+            area3.innerHTML += `145.897의 올림 : ${Math.ceil(145.897,1)}<br>`
+        }
+    </script>
+
+<h3>* 문자열과 숫자간의 산술연산/ 형변환</h3>
+<button onclick="arithmetic();">산술연산</button>
+<div class="area" id="area4"></div>
+
+<script>
+    function arithmetic(){
+        //덧샘은 문자열이 있으면 문자열로 인식
+        let test1 =7+7;
+        let test2 = 7+'7';
+        let test3 = '7'+7;
+        let test4 = '7'+7+7;
+        let test5 = '7'+(7+7);
+        const area4=document.querySelector('#area4');
+        area4.innerHTML =`1. 7+7 = ${test1}  (type : ${typeof test1})<br>`;
+        area4.innerHTML +=`2. 7+'7' = ${test2}  (type : ${typeof test2})<br>`;
+        area4.innerHTML +=`3. '7'+7 = ${test3}  (type : ${typeof test3})<br>`;
+        area4.innerHTML +=`4. '7'+7+7 = ${test4}  (type : ${typeof test4})<br>`;
+        area4.innerHTML +=`5. '7'+(7+7) = ${test5}  (type : ${typeof test5})<br>`;
+        
+        //덧셈이외의 산술 연산
+        //문자열이 포함되어 있으면 숫자로 자동형변황되어 산술 연산됨
+        //조건 : 문자열에 숫자만 들어있어야됨
+        let test6 = '7'-6;
+        let test7 = '7'*3;
+        let test8 = '7'/7;
+        area4.innerHTML +=`6. '7'-6 = ${test6}  (type : ${typeof test6})<br>`;
+        area4.innerHTML +=`7. '7'*3 = ${test7}  (type : ${typeof test7})<br>`;
+        area4.innerHTML +=`8. '7'/7 = ${test8}  (type : ${typeof test8})<br>`;
+        
+        //강제 형변환
+        //덧셈 연산시는 자동현변환이 안됨. 강제 형변환 해줘야함
+        /*
+        1) Number(문자열)
+        2) parseInt(문자열)  //얘는 정수로만
+        3) parseFloat(문자열) //얘는 실수로만
+        */
+       
+       let test9 = 2+'3';
+       let test10 = 2 + Number('3');
+       let test11 = 2 + parseInt('3');
+       let test12 = 2 + parseFloat('3');
+       area4.innerHTML +=`9. 2+'3' = ${test9}<br>`;
+       area4.innerHTML +=`10. 2 + Number('3') = ${test10}  (type : ${typeof test10})<br>`;
+       area4.innerHTML +=`11. 2 + parseInt('3') = ${test11}  (type : ${typeof test11})<br>`;
+       area4.innerHTML +=`12. 2 + parseFloat('3') = ${test12}  (type : ${typeof test12})<br>`;
+       
+       
+       //2, '1.234'
+       let test13 = 2 + '1.234';
+       let test14 = 2 + Number('1.234');
+       let test15 = 2 + parseInt('1.234');
+       let test16 = 2 + parseFloat('1.234');
+       let test17 = parseFloat('2.0') + parseFloat('1.234');
+       area4.innerHTML +=`13. 2+'1.234' = ${test13}  (type : ${typeof test13})<br>`;
+       area4.innerHTML +=`14. 2 + Number('1.234') = ${test14}  (type : ${typeof test14})<br>`;
+       area4.innerHTML +=`15. 2 + parseInt('1.234') = ${test15}  (type : ${typeof test15})<br>`;
+       area4.innerHTML +=`16. 2 + parseFloat('1.234') = ${test16}  (type : ${typeof test16})<br>`;
+       area4.innerHTML +=`16. parseFloat('2.0') + parseFloat('1.234') = ${test17}  (type : ${typeof test17})<br>`;
+       
 
 
+    }
 
+</script>
 
+<br>
+정수1 : <input type="number" id="num1"><br>
+정수2 : <input type="number" id="num2"><br>
 
+<div id="result">결과없음</div>
+<button onclick="plus();">덧셈</button>
+<button onclick="minus();">뺄셈</button>
 
+<script>
+    function plus(){
+        const num1 = document.getElementById('num1').value;
+        const num2 = document.querySelector('#num2').value;
+        const divE1 = document.querySelector('#result');
 
+        divE1.innerHTML = `${num1} + ${num2} = ${parseInt(num1) + parseInt(num2)}`;
 
+        console.log(typeof num1);
 
+        
+    }
+    function minus(){
+        const num1 = document.getElementById('num1').value;
+        const num2 = document.querySelector('#num2').value;
+        const divE1 = document.querySelector('#result');
 
+        divE1.innerHTML = `${num1} - ${num2} = ${parseInt(num1) - parseInt(num2)}`;
 
+        console.log(typeof num1);
 
+        
+    }
+</script>
 
+<hr>
 
+<h3> * 실습문제</h3>
+<p>
+    사용자로부터 prompt로 입력받은 문자열 중 알파벳(소문자만)의 갯수 세기
+</p>
+<button onclick="countLowerCase();">실습문제</button>
+<div class="ex"></div>
 
+<script>
+function countLowerCase(){
+    const inputEng = prompt("소문자와 대문자가 섞인 영문을 입력해주세요");
+    let countlow=0;
+    let countup=0
+    let low='';
+    let up='';
+    for( var i=0;i<inputEng.length;i++){
+        if((inputEng.charCodeAt(i))>=97&&(inputEng.charCodeAt(i)<=122 )){
+            countlow++;
+            low +=inputEng.charAt(i);
+        }
+        if((inputEng.charCodeAt(i))>=65&&(inputEng.charCodeAt(i)<=90 )){
+            countup++;
+            up +=inputEng.charAt(i);
+        }
+    }
+    //소문자는 97 ~ 122
+    const output = document.querySelector(".ex");
+    output.innerHTML = 
+    `소문자는 ${low}이고, 갯수는 ${low.length}개이고,
+    대문자는 ${up}이고 갯수는 ${up.length}개 입니다.`
 
+    console.log((inputEng.charCodeAt(0))<=123 );
 
+}
 
-
-
-
-
+</script>
 
 
 

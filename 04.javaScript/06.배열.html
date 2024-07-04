@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+    <style>
+        .area{
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열</h1>
+    <p>
+
+        - 변수 선언시 별도의 자료형 지정하지 않음<br>
+        - 어떤 자료형의 값들이든 다 하나의 배열 공간에 담을 수 있음,(스트링과 인트, 논리형을 하나의 배열에 담을 수 있다?)
+          크기에 제약도 없다(자바의 컬렉션과 유사)
+        - 존재하지 않는 인덱스를 참조해도 오류나지 않음. undefined 리턴
+    </p>
+
+    <button onclick="arrayTest1();">배열 확인</button>
+    <div class="area" id="area1"></div>
+
+    <script>
+        function arrayTest1(){
+            let arr=['홍길동', "서울", 20, true, [1,2,3]];
+            console.log(arr);
+            console.log(arr[2]);
+            console.log(arr[4]);
+            console.log(arr[4][2]);
+            console.log(arr[5]);
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
