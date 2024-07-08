@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체속성추가삭제</title>
+    <style>
+        .area{
+            border: 1px solid;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>* 객체의 속성 추가 및 삭제</h1>
+    <p>
+        객체의 속성 중 함수 자료형인 속성들을 추가하거나 삭제
+    </p>
+    <button onclick ="test1();">실행확인</button>
+    <div class="area" id="area1"></div>
+
+    <script>
+        function test1(){
+            let area1 = document.getElementById('area1');
+            const student = {};         //빈 객체 생성
+
+            //객체에 속성 추가
+            student.name = '아무개';
+            student.hobby=['게임','독서','운동'];
+            student.dream = '건물주';
+            student.age = 20;
+            console.log(student);
+
+            //기존에 있는 속성이면 덮어쓰기, 없으면 추가
+            student.dream = '프로그래머';
+            console.log(student);
+
+            //함수 추가
+            student.toString = function(){
+                const str = `name : ${this.name}
+                    hobby : ${this.hobby}
+                    dream : ${this.dream}
+                    age : ${this.age}<Br>`;
+                return str;
+            }
+            console.log(student);
+            area1.innerHTML += `학생정보 : ${student}<br>`;
+            
+            //객체 속성 제거
+            delete(student.age);
+            student.toString = function(){
+                const str = `name : ${this.name}
+                    hobby : ${this.hobby}
+                    dream : ${this.dream}`
+                return str;
+            }
+            area1.innerHTML += `age속성 삭제 후 학생정보 : ${student} <br>`;
+            //age를 삭제해도  age = undefined가 뜨는 이유는 toString에 age가 정의되어 있기 떄문이다.
+
+        }
+    </script>
+
+    <h1>객체 배열</h1>
+
+    <h3>* 객체 배열을 사용한 다량의 데이터 관리</h3>
+
+    <button onclick="test2();">실행확인</button>
+    <div class="area" id="area2"></div>
+
+    <script>
+        const area2 = document.getElementById('area2');
+        function test2(){
+            const student0={name : '홍길동', java : 78, orcale : 89, html : 98, css : 95};
+            const student1={name : '강감찬', java : 13, orcale : 15, html : 65, css : 43};
+            const student2={name : '김민수', java : 94, orcale : 63, html : 76, css : 99};
+            const student3={name : '홍철수', java : 100, orcale : 100, html : 100, css : 100};
+
+            const students1 = [student0, student1, student2, student3];
+            const students2 = [];
+            students2.push(student0);
+            students2.push(student1);
+            students2.push(student2);
+            students2.push(student3);
+            ///////////////////////////////////////////////////////
+            // const students3=[];
+            // for(let i =0;i<4;i++){
+            //     let k =student+i;
+            //     students3.push(k);
+            // }
+            ////////////////////////////////////////////////////////
+            console.log(students1);
+            console.log(students1[1].name);
+            console.log(students2[0]);
+            // console.log(students3);
+
+            //객체.속성 = 새로운값;
+            for(i in students1){
+                //모든 학생의 java점수 덮어쓰기
+                students1[i].java = 100;
+                //모든 학생의 javascript속성 추가
+                students1[i].javascript = 99;
+
+                //모든 학생의 점수의 합계 추가
+
+                students1[i].getSum = function(){
+                    return this.css +this.html +this.java +this.orcale +this.javascript;
+                }
+
+                //모든 학생의 평균 추가
+                students1[i].getAvg = function(){
+                    return (Math.round(this.getSum()/5*100))/100;
+                }
+                // area2.innerHTML += `students1[i] type : ${typeof students1[i].javascript}   `;
+                area2.innerHTML += `이름 : ${students1[i].name}, 총점 : ${students1[i].getSum()}, 평균 : ${students1[i].getAvg()}<br>`;
+            }
+            
+        }
+        </script>
+
+<h3> * 생성자 함수</h3>
+<p>
+    new 키워드를 통해서 객체를 생성할 수 있는 함수(함수 제시시 첫글자는 대문자로)
+    
+</p>
+<button onclick = "test3();">실행 확인</button>
+<div class="area" id="area3"></div>
+
+<script>
+    function test3(){
+        let area3 = document.getElementById('area3');
+        
+        const student0= new Students("홍길동",100,39,31,37,90);
+        console.log(student0);
+        const student1= new Students("김길동",68,72,31,48,90);
+        const student2= new Students("정길동",51,39,84,48,90);
+
+        const students = [student0, student1, student2];
+        for(i in students){
+            area3.innerHTML += `이름 : ${students[i].name}, 총점 : ${students[i].getSum()}, 평균 : ${students[i].getAvg()}<br>`;
+        }
+        
+    }
+    
+    function Students(name, java, oracle, html, css,javascript){
+        //일반 속성 정의
+        this.name = name;
+        this.java = java;
+        this.oracle = oracle;
+        this.html = html;
+        this.css = css;
+        this.javascript=javascript;
+        
+        //메소드 정의
+        this.getSum = function(){
+            return this.css +this.html +this.java +this.oracle +this.javascript;
+            
+        }
+        
+        this.getAvg = function(){
+            return (Math.round(this.getSum()/5*100))/100;
+            
+        }
+    }
+    </script>
+
+    <h1>내장 객체 : Date</h1>
+    <!-- 
+        월을 입력할 때는 0부터 시작하기 떄문에 -1을 해줘야 하고
+        월을 출력할 때는 +1을 해줘야 한다.
+      -->
+    <button onclick = "test4();">실행확인</button>
+    <div class="area" id="area4"></div>
+
+    <script>
+        function test4(){
+            const area4 = document.getElementById('area4');
+
+            const date1 = new Date();
+            console.log(date1);
+
+            const date2=new Date(2024,7-1,5);
+            console.log(date2);
+
+            const date3= new Date(2024,7-1,5,17,26,30);
+            console.log(date3);
+
+            area4.innerHTML +=`Date() : ${date1}<br>`;
+            area4.innerHTML += `Date(년,월, 일) : ${date2}<br>`;
+            area4.innerHTML +=`Date(년,월,일,시,분,초) : ${date3}<br>`;
+
+            area4.innerHTML += `년도 : ${date1.getFullYear()}<br>`;
+            area4.innerHTML += `월 : ${date1.getMonth()+1}<br>`; //월를 출력할떄는 +1을 해줘야 한다.
+            area4.innerHTML += `일 : ${date1.getDate()}<br>`;
+            area4.innerHTML +=`요일 : ${date1.getDay()}<br>`;
+
+            //현재 날짜부터 종강일(2024.11.25.)까지 남은 일수 d-day
+            const endDate =new Date(2024,11-1,25);
+            area4.innerHTML +=`d-day ${Math.ceil((endDate-date1)/86400000)+1}`;
+
+            // button[onclick="test5();"]#area455{tesfweop} 에밋 예제  : 오브젝트명[태그명].클래스명#아이디명{객체내용}
+
+            
+
+
+        }
+    </script>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
