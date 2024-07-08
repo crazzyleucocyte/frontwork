@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        form{
+            border:1px solid;
+            height: 1000px;
+            width: 100%;
+        }
+        #title{
+            text-align: center;
+        }
+        table{
+            border: 1px solid;
+            width: 100%;
+            height: 600px;
+        }
+        tr, td{
+            /* border: 1px solid; */
+            height: 28px;
+            text-align: left;
+        }
+        #form{
+            text-align: center;
+        }
+        .sumitbutton{
+            width: 98px;
+            height: 35px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id ="title">회원가입</h1>
+    <form action="test.do" id ="form">
+        <table>
+        <tr>
+            <td rowspan="14" style="width: 15%;"></td>
+            <td > * 아이디 :</td>
+            <td >  <input type="text" name="userId" id ="userId"></td>
+            <td rowspan="14" style="width: 15%;"></td>
+        </tr>
+        <tr>
+            <td colspan="3" >첫 글자는 반드시 영문자하고 영문자, 숫자 포함 총 4~12자로 입력하시오.</td>
+        </tr>
+        <tr>
+            <td >* 비밀번호 : </td>
+            <td ><input type="password" name ="userPwd" id ="userPwd"></td>
+        </tr>          
+        <tr>
+            <td colspan="2" > 영문자, 숫자, 특수문자로 총 8~15자로 입력하시오.</td>
+        </tr> 
+        <tr>
+            <td >* 비밀번호 확인 : </td>
+            <td ><input type="password" id = "checkPwd"></td>
+        </tr>          
+        <tr>
+            <td colspan="2" > 위의 비밀번호와 일치하게 입력하시오.</td>
+        </tr> 
+        <tr>
+            <td >* 이름 : </td>
+            <td ><input type="text" name = "name" id="name"></td>
+        </tr>          
+        <tr>
+            <td colspan="3" > 한글로만 이루어져 있어야 되면 2글자 이상으로 입력하시오.</td>
+        </tr> 
+        <tr>
+            <td >* 이메일 : </td>
+            <td ><input type="email" name="email" id="email"></td>
+        </tr>          
+        <tr>
+            <td colspan="2" > 이메일 형식에 맞춰 입력하시오.</td>
+        </tr> 
+        <tr>
+            <td >* 취미 : </td>
+            <td ><input type="text" id="hobby" name="hobby"></td>
+        </tr>          
+        <tr>
+            <td >* 거주지 : </td>
+            <td ><select name="거주지" id="address" name="address">
+                <option value="서울">서울</option>
+                <option value="경기">경기</option>
+                <option value="강원">강원</option>
+                <option value="경상도">경상도</option>
+                <option value="전라도">전라도</option>
+            </select></td>
+        </tr>          
+        <tr>
+            <td colspan="2"><hr></td>
+        </tr>
+        <tr>
+            <td ></td>
+            
+            <td >
+                <input type="submit" value="회원가입" class = "sumitbutton" name="sign in">&emsp;&emsp;&emsp;
+                <input type="reset" value="취소" class = "sumitbutton" name = "cancle">
+            </td>
+        </tr>
+         
+
+
+
+        </table>
+
+    </form>
+</body>
+</html>

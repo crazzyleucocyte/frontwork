@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식</title>
+    <style>
+        .area{
+            width: 500px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>정규 표현식</h1>
+
+    <h3>* 정규표현식 객체 생성 및 정규표현식과 관련된 메서드</h3>
+
+    <button onclick ="test1();">실행확인</button>
+    <div class="area" id="area1"></div>
+    
+    <script>
+        function test1(){
+            const area1 = document.querySelector('#area1');
+            const str1 = 'javascript jquery ajax';
+            const str2 = 'java oracle html css';
+
+            // 정규표현식 객체 생성 == 정규식 변수를 선언
+            //
+            //RegExp()는 안에 꼭 들어가야하는 문자를 입력해준다.
+            let regExp = new RegExp('script');    // 방법 1
+            let regExp2 = /script/;               // 방법 2
+            console.log(regExp);
+            console.log(regExp2);
+
+            /*
+                *regExp 객체에서 제공하는 메서드(정규식.xxx(문자열))
+                 - 정규식.test(문자열)({regExp.test(str1)) : 문자열에서 정규식값과 일치하는 값이 있으면 true반환
+                 - 정규식. exec(문자열) : 문자열에서 정규식값과 일치하는 값이 있으면 처음 매칭된 문자열 반환, 없으며 null
+
+                * String 객체에서 제공하는 메서드 (문자열.xxx(정규식))
+                 - 문자열.match(정규식) : 문자열에서 정규식값과 일치하는 값을 찾아서 반환
+                 - 문자열.search(정규식) : 문자열에서 정규식값과 일치하는 값의 시작인덱스값을 반환, 없으면 -1 반환
+                 - 문자연.replace(정규식, 바꿀값) : 문자열에서 정규식값과 일치하는 첫번째 문자열을 바꿀값으로 변경하여 반환
+                 - 문자열.split(정규식) : 정규식에 지정된 값을 구분자로 하여 쪼개진 값들이 담겨있는 배열 반환
+
+            */
+            area1.innerHTML += `str1 : ${str1}<br>str2 : ${str2}<br>regExp : ${regExp}<br><br>`;
+            area1.innerHTML += `regExp.test(str1) : ${regExp.test(str1)}<br>`;  //str1에 script가 들어있는지를 확인
+            area1.innerHTML += `regExp.test(str2) : ${regExp.test(str2)}<br><hr>`;  //str2에 script가 들어있는지를 확인
+
+            area1.innerHTML += `regExp.exec(str1) : ${regExp.exec(str1)}<br>`;
+            area1.innerHTML += `regExp.exec(str2) : ${regExp.exec(str2)}<br><hr>`;
+            
+            area1.innerHTML += `str1.match(regExp) : ${str1.match(regExp)}<br>`;
+            area1.innerHTML += `str2.match(regExp) : ${str2.match(regExp)}<br><hr>`;
+            
+            area1.innerHTML += `str1.search(regExp) : ${str1.search(regExp)}<br>`;
+            area1.innerHTML += `str2.search(regExp) : ${str2.search(regExp)}<br><hr>`;
+            
+            area1.innerHTML += `str1.replace(regExp,'스크립트') : ${str1.replace(regExp,'스크립트')}<br>`;
+            area1.innerHTML += `str2.replace(regExp,'스크립트') : ${str2.replace(regExp,'스크립트')}<br><hr>`;
+            
+            area1.innerHTML += `str1.split(regExp) : ${str1.split(regExp)}<br>`;
+            area1.innerHTML += `str2.split(regExp) : ${str2.split(regExp)}<br><hr>`;
+            
+            regExp= / /;
+            area1.innerHTML += `str1.split(regExp) : ${str1.split(regExp)}<br><hr>`;
+        }
+    </script>
+
+    <hr>
+    <h3>* 메타 문자</h3>
+    <p>
+        메타 문자를 이용하여 정규식으로 검색조건으로 삼을 '특정패턴'을 만듦<br>
+        문자열이 해당 정규식으로 제시한 특정패턴에 만족하는지 test()를 통해 검사하거나<br>
+        replace()이용하여 치환 가능
+    </p>
+
+    <button onclick="test2();">실행확인</button>
+    <div class="area" id="area2"></div>
+
+    <script>
+        function test2(){
+            const area2 = document.getElementById('area2');
+            const str = 'javascript jquery ajax';
+
+            let regExp = /a/;
+            area2.innerHTML +=`/a/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML += `/a/ 를 (***)로 변환 : ${str.replace(regExp,'(***)')}<br>`;
+
+            // 1. ^ : 시작을 의미
+            regExp = /^j/;  //j로 시작하는게 있는지를 물어본다는 뜻
+            area2.innerHTML += `/^j/ : ${regExp.test(str)}<br>`;
+            
+            // /^j/를 (***)으로 변경
+            area2.innerHTML += `/^j/를 (***)으로 변환 : ${str.replace(regExp,'(***)')}<br>`;
+
+            //2. [] : []내에 여러 문자들을 목록처럼 나열 가능
+            regExp = /[abc]/;  //a나 b나 c가 안에 있으면 된다.
+            area2.innerHTML += `/[abc]/ : ${regExp.test(str)}<br>`;
+            area2.innerHTML += `/[abc]/를 (***)으로 변환 : ${str.replace(regExp,'(***)')}<br>`;
+            
+            //j나 s나 a로 시작할 수 있다.
+            regExp = /^[saj]/; 
+            area2.innerHTML +=`/^[saj]/ : ${regExp.test(str)}<br>`; 
+            area2.innerHTML += `/^[saj]/를 (***)으로 변환${str.replace(regExp,'(***)')}<br>`;
+
+            //3. $ : 끝을 의미
+            regExp = /x$/;
+            area2.innerHTML += `/x$/ : ${regExp.test(str)}<br>`;
+
+            //j로 시작하고 x로 끝나는
+            regExp=/^jx$/;  //false  중간에 글씨가 들어있어서 false가 나온다.
+            area2.innerHTML += `/^jx$/ : ${regExp.test(str)}<br>`;
+            
+            //4. 점(.) : 개행문자를 제외한 모든 문자(영문자, 숫자, 한글, 특수문자)
+            //5. + : 한글자 이상
+            //          .+의 뜻은 개행문자를 제외한 어떤 문자 한글자 이상인 경우
+
+            regExp=/^jx$/;  //false
+            area2.innerHTML += `/^jx$/ : ${regExp.test(str)}<br>`;
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+</body>
+</html>
