@@ -99,7 +99,7 @@
     <button onclick="test3(this)">인라인 방식2</button>
 
     <script>
-        // function(e) : e => 이벤트 핸들러를 의미한다.
+        // function(e) : e => 이벤트 핸들러를 의미한다. e도 변수명으로 다르게 써도 된다.
         document.getElementById('btn4').onclick = function(e){
             // console.log(e);    //매개변수에 e를 입력했을떄 이벤트 핸들러 호출방법
             console.log(window.event);      //매개변수가 없을때 이벤트 핸들러 호출 방법
@@ -138,7 +138,7 @@
        function test2(e){
            //console.log(e.target);
            console.log(window.event.target);
-           console.log(this);      //윈도우 객체를 가리키기 떄문에 이 경우 사용할 수 있는건 window.event.target하나다
+           //console.log(this);      //윈도우 객체를 가리키기 떄문에 이 경우 사용할 수 있는건 window.event.target하나다
 
            window.event.target.style.backgroundColor="lightcyan";
            window.event.target.style.color = "red";
@@ -147,7 +147,7 @@
 
         function test3(ev){
             console.log(ev);
-            console.log(this);  //윈도우 객체
+            //console.log(this);  //윈도우 객체
             ev.style.backgroundColor="purple";
             this.style.color="white";
             ev.innerHTML = '버튼 클릭됨';

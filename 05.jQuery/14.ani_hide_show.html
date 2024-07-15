@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <title>Effect메서드</title>
+</head>
+<body>
+    <h1>시각적인 효과(Effect 메서드)</h1>
+
+    <p>
+        페이지 내에 애니메이션 효과를 주기 위해 사용되는 메서드들
+    </p>
+
+    <h3>* show() hide(),</h3>
+    <p>선택된 요소가 점점 커지면서 보여지고, 점점 작아지면서 사라지게 되는 메소드</p>
+
+    <button id="hide">숨기기</button>
+    <button id="show">보여주기</button>
+    <button id="toggle">토글</button>
+
+    <br>
+    <br>
+    <img src="../02.CSS3/resources/img/할슈타트.jpg" alt="" id="img1">
+
+    <div id="content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus repellendus incidunt laudantium esse earum nobis temporibus vero dicta itaque. Minima rerum placeat iure dolorem illum necessitatibus temporibus facilis laudantium porro.
+        Consectetur eaque temporibus perspiciatis inventore, corporis quae quam earum fugiat consequatur commodi, voluptatibus alias saepe laborum doloribus officia error libero assumenda quas mollitia natus ipsam quisquam maiores. Id, libero fugit?
+    </div>
+
+    <script>
+        $(() => {
+            $('#hide').click(function(){
+                $('#img1').hide(1000);
+            })
+            $('#show').click(function(){
+                $('#img1').show(500);
+            })
+            $('#toggle').click(function(){
+                //easeOutBounce는 jQuery.ui를 써서 한것이다.
+                $('#img1').toggle(500,'easeOutBounce');
+            })
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

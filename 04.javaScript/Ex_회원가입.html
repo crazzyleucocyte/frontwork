@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="resources/js/Ex_회원가입.js" rel="javascript"></script> -->
+    <script src="resources/js/Ex_회원가입.js" rel="javascript"></script>
+
     <title>회원가입</title>
     <style>
         form{
-            border:1px solid;
-            height: 1000px;
-            width: 100%;
+            /* border:1px solid; */
+            /* height: 1000px; */
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
         }
         #title{
             text-align: center;
@@ -16,16 +21,14 @@
         table{
             border: 1px solid;
             width: 100%;
-            height: 600px;
+            height: 800px;
         }
         tr, td{
             /* border: 1px solid; */
             height: 28px;
             text-align: left;
         }
-        #form{
-            text-align: center;
-        }
+       
         .sumitbutton{
             width: 98px;
             height: 35px;
@@ -35,7 +38,7 @@
 </head>
 <body>
     <h1 id ="title">회원가입</h1>
-    <form action="test.do" id ="form">
+    <form action="login.html      " >
         <table>
         <tr>
             <td rowspan="14" style="width: 15%;"></td>
@@ -81,6 +84,7 @@
         <tr>
             <td >* 거주지 : </td>
             <td ><select name="거주지" id="address" name="address">
+                <option value="선택">선택</option>
                 <option value="서울">서울</option>
                 <option value="경기">경기</option>
                 <option value="강원">강원</option>
@@ -95,7 +99,8 @@
             <td ></td>
             
             <td >
-                <input type="submit" value="회원가입" class = "sumitbutton" name="sign in">&emsp;&emsp;&emsp;
+                <!-- <input type="button" value="회원가입" class = "sumitbutton" name="login" id="login" >&emsp;&emsp;&emsp; -->
+                <button type="submit" class = "sumitbutton" name="login" id="login" onclick = "return validate();" >버튼</button>&emsp;&emsp;&emsp;
                 <input type="reset" value="취소" class = "sumitbutton" name = "cancle">
             </td>
         </tr>
@@ -104,7 +109,9 @@
 
 
         </table>
-
+        
     </form>
+    <div id="output"></div>
+
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <title>ani_slideUp_slideDown</title>
+    <style>
+        div[id^=q]{
+            background-color: rgb(241, 221, 194);
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 8px;
+        }
+        p[id^=a]{
+            background-color: rgb(202, 241, 194);
+            width: 300px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>*slideDown() slideUp()</h1>
+    <p>
+        선택된 요소가 점점 위로 말려올라가면서 사라지고 점점 내려오면서 보여지게 하는 메소드
+    </p>
+
+    <div id="test1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam doloribus asperiores illo eius ipsam sunt natus aut, numquam ipsum rem expedita assumenda nostrum temporibus velit nesciunt, quia consequuntur sequi laborum!
+    </div>
+
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+    <button id="slideToggle">slideToggle</button>
+
+
+
+
+    <script>
+        $(() => {
+            $('#slideUp').click(function(){
+                $('#test1').slideUp(800);
+            })
+            $('#slideDown').click(function(){
+                $('#test1').slideDown(800);
+            })
+            $('#slideToggle').click(function(){
+                $('#test1').slideToggle(800);
+            })
+        })
+    </script>
+
+
+<hr>
+        <h3>질문에 대한 답 보여주기</h3>
+
+        <div id="q1">Q. 질문입니다.</div>
+        <p id="a1">A.답변입니다.</p><br>
+
+        <div id="q2">Q.점심에 무엇을 드셨나요?</div>
+        <p id="a2">A.닭갈비 볶음밥에 치즈를 얹어서 먹었습니다.</p><br>
+
+        <div id="q3">Q.집은 언제 갈 수 있나요?</div>
+        <p id="a3">A.미정입니다.</p><br>
+
+        <div id="q4">Q.본인은 열심히 공부하십니까?</div>
+        <p id="a4">A.네 어제도 오후 9시 30분에 집에 갔습니다.</p><br>
+
+        <div id="q5">Q.무엇을 먹고 싶으신가요?</div>
+        <p id="a5">A.화락치킨을 먹고 싶습니다.</p><br>
+
+    <script>
+        $(() => {
+            $('p').css({display:'none'});
+            $('div[id^=q]').click(function(){
+                $(this).next('p').slideToggle(300);
+            })
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

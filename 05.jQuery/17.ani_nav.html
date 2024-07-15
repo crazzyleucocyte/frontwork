@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <title>nav</title>
+    <style>
+        li{
+            list-style: none;
+            float: left;
+            width: 150px;
+        }
+        li a{
+            text-decoration: none;
+            background-color: #6b8e23;
+            display: inline-block;
+            width: 150px;
+            height: 70px;
+            color: #f5f5dc;
+            text-align: center;
+            font: bold 18px verdana;
+            line-height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="" data-bg ="#FFFFFF">Home</a></li>
+        <li><a href="" data-bg="#F361DC">About</a></li>
+        <li><a href="" data-bg="#000000">Poteupollio</a></li>
+        <li><a href="" data-bg="#983C07">Contact</a></li>
+    </ul>
+    
+</body>
+
+<script>
+    $(()=> {
+        $('li>a').hover(function(){
+            let overColor =$(this).attr('data-bg');
+            $(this).stop().animate({backgroundColor:overColor,color:'white'},1000);
+            console.log(overColor);
+        },function(){
+            $(this).stop().animate({backgroundColor:'#6b8e23',color:'#f5f5dc'},500);
+        })
+    })
+</script>
+</html>

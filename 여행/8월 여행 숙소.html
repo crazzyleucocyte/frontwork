@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        
+        <title>여행 숙소</title>
+        
+        <style>
+            body{
+                font-family: "Gothic A1", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            background-color: rgb(241, 241, 241);
+            }
+        table{
+            /* border:1px solid rgba(128, 128, 128, 0.521); */
+            margin: 0 auto;
+            width: 1100px;
+            /* height: 400px; */
+        }
+        .table{
+            border-spacing: 5px;
+            width: 1100px;
+            height: 500px;
+            vertical-align: middle;
+            
+        }
+        table[class^=second]{
+            text-align: center;
+            border-spacing: 5px;
+            
+        }
+        table[class^=second] .column{
+            text-align: center;
+            width: 10%;
+            
+        }
+        table[class^=second] #shortCut{
+            text-align: center;
+            width: 33%;
+            
+        }
+        table[class^=second] .img{
+            text-align: center;
+            width: 28%;
+            height: 250px;
+            
+        }
+        
+        table[class^=second] #value{
+            /* height: 30px; */
+            /* border-right:1px solid; */
+            /* border-left:1px solid; */
+            border: none;
+            /* padding: 3px; */
+            border-radius: 8px;
+            border-bottom: 1px solid rgb(173, 173, 76);
+
+            /* box-shadow: 0px 0px 5px rgb(194, 194, 194); */
+        }
+        table[class^=third]{
+            text-align: center;
+            border-spacing: 5px;
+            
+        }
+        table[class^=third] .column{
+            text-align: center;
+            width: 10%;
+            
+        }
+        table[class^=third] #shortCut{
+            text-align: center;
+            width: 33%;
+            
+        }
+        table[class^=third] .img{
+            text-align: center;
+            width: 45%;
+            height: 250px;
+            
+        }
+        
+        table[class^=third] #value{
+            /* height: 30px; */
+            /* border-right:1px solid; */
+            /* border-left:1px solid; */
+            border: none;
+            /* padding: 3px; */
+            border-radius: 8px;
+            /* box-shadow: 0px 0px 5px rgb(194, 194, 194); */
+            border-bottom: 1px solid rgb(173, 173, 76);
+
+        }
+        td{
+            height: 30px;
+            /* border:1px solid; */
+            border-bottom: 1px solid rgb(173, 173, 76);
+        }
+        #side{
+            width: 15%;
+        }
+        .title{
+            text-align: center;
+        }
+        .img{
+            /* border:1px solid; */
+            width: 45%;
+            height: 400px;
+            
+        }
+        
+        .column{
+            width: 8%;
+            background-color: rgb(238, 238, 164);
+            /* padding: 5px; */
+            border-radius: 5px;
+            text-align: center;
+        }
+        .imgs{
+            overflow: hidden;
+            width: 100%;
+            border:none;
+            outline: none;
+        }
+        .IMG:hover{
+            scale: 110%;
+        }
+        .IMG{
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            transition: scale 400ms;
+
+        }
+        #img1{
+            /* background: url("http://www.gogojamjari.com/data/file/preview/thumb-2042228074_Hagyvuzc_c77f56cc4ba8606324e1c37758238a57208882cb_1200x800.jpg") no-repeat center; */
+            background-image: url("http://www.gogojamjari.com/data/file/preview/thumb-2042228074_Hagyvuzc_c77f56cc4ba8606324e1c37758238a57208882cb_1200x800.jpg");
+            height: 400px;
+            
+            
+        }
+        #img2{
+            width: 100%;
+            background-image: url("http://muchangpo.net/uploads/comp/2022/06/16/1655362631_1e5ca1c419777d7492a1.png");
+            height: 400px;
+           
+            
+        }
+        #img3-1{
+            background-image: url("https://hdvillage.net/assets/images/room/33790/2.webp");
+            height: 250px;
+            
+            
+        }
+        #img3-2{
+            background-image: url("https://hdvillage.net/assets/images/room/33792/1.webp");
+            height: 250px;
+            
+            
+        }
+        #img3-3{
+            background-image: url("https://hdvillage.net/assets/images/room/33793/1.webp");
+            height: 250px;
+            
+            
+        }
+        #img4-1{
+            background-image: url("https://cdn.imweb.me/thumbnail/20180713/5b48005580fad.jpg");
+            height: 250px;
+            
+            
+        }
+        #img4-2{
+            background-image: url("https://cdn.imweb.me/thumbnail/20180719/5b5034e2815fc.jpg");
+            height: 250px;
+            
+            
+        }
+        .바로가기{
+            border: none;
+            /* border-radius: 5px; */
+            width: auto;
+            background-color: rgb(230, 225, 225);
+            height: 25px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom: 1px solid;
+            font-size: 14px;
+            
+        }
+        .straght{
+            /* border: 1px solid; */
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+      
+        #shortCut, #shortCut:visited{
+            color: black;
+            text-decoration: none ;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 class="title">스텝업 8월 휴가 숙소 목록</h1>
+    <br>
+    <h2 style="text-align: center;">바로가기</h2>
+    <div class="straght" >
+        <div class="btn-group " role="group" aria-label="Large button group">
+            <button type="button" class="btn btn-outline-primary" onclick='location.href="#1번";'>1</button>
+            <button type="button" class="btn btn-outline-primary"onclick='location.href="#2번";'>2</button>
+            <button type="button" class="btn btn-outline-primary"onclick='location.href="#3번";'>3</button>
+            <button type="button" class="btn btn-outline-primary"onclick='location.href="#4번";'>4</button>
+          </div>
+        
+      
+    </div>
+</div>
+    <table class="table table-striped" id="1번">
+        
+        <tr >
+            <td rowspan="12" class = 'img'><h2>1번</h2><div class='imgs'><img class ='IMG' id='img1'></div>사진 클릭시 숙소 링크로 이동</td>
+            <td class="column" colspan="2">숙소 이름</td>
+            <td id="value"><h5>보령 잠자리펜션 별관</h5></td>
+        
+        <tr>
+            <td class="column" colspan="2">방 이름</td>
+            <td id="value">초록</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">가격</td>
+            <td id="value">280,000원</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">크기</td>
+            <td id="value">"안나와있음(작을듯)"</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">기준 인원</td>
+            <td id="value">4인</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">최대인원</td>
+            <td id="value">7인</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">제공용품</td>
+            <td id="value">비고 참조</td>
+        </tr>
+        <tr>
+         
+            <td class="column" colspan="2">장점</td>
+            <td id="value">
+                    <li>복층</li>
+                    <li>테이블 큼</li>
+                    <li>근처 편의점 o</li>
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">단점</td>
+            <td id="value">
+                    <li>복층</li>
+                    <li>좀 작아보임</li>
+                    <li>약간 언덕에 위치</li>
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">주차</td>
+            <td id="value">가능</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">비고</td>
+            <td id="value">"TV, 에어컨, 씽크대, 인덕션렌지, 전기밥솥, 냉장고 등 주방식기류 일체, 샴푸, 치약, 비누, 수건, 드라이기, 전자레인지
+                - 바베큐 그릴 이용료(숯,그릴 등 포함) : 20,000원"<br><br>
+                 바로가기
+                <button class="btn btn-secondary btn-sm" id="bbq1">바베큐장 ▶</button>
+                <button class="btn btn-secondary btn-sm" id="loc1">위치 ▶</button>
+                </td>
+        </tr>
+
+
+       
+        </table>
+        <!-- 22222------------------------------------------------------------------------------------------------------------------------- -->
+       <br>
+        <table class="table table-striped" id="2번">
+        <tr>
+            <td rowspan="12" class = 'img'><h2>2번</h2><div class = "imgs" ><img class="IMG" id="img2"></div>사진 클릭시 숙소 링크로 이동</td>
+            <td class="column" colspan="2">숙소 이름</td>
+            <td id="value"><h4>보령(무창포) 바다노을펜션</h4></td>
+        <tr>
+            <td class="column" colspan="2">방 이름</td>
+            <td id="value">블루
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">가격</td>
+            <td id="value">240,000원
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">크기</td>
+            <td id="value">21평
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">기준 인원</td>
+            <td id="value">5인</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">최대인원</td>
+            <td id="value">7인</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">제공용품</td>
+            <td id="value">TV, 에어컨, 냉장고, 전기밥솥, 전자렌지가스렌지, 식기류, 헤어드라이, 수건, 비누,샴푸, 바디샴푸, 와이파이
+            </td>
+        </tr>
+        <tr>
+           
+            <td class="column" colspan="2">장점</td>
+            <td id="value">
+                
+                    <li>신축느낌</li>
+                    <li>깔끔</li>
+                    <li>근처 편의점 o</li>
+                
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">단점</td>
+            <td id="value">
+                
+                    <li>바다로 걸어서는좀 걸리는듯
+                        </li>
+                
+            </td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">주차</td>
+            <td id="value">가능</td>
+        </tr>
+        <tr>
+            <td class="column" colspan="2">비고</td>
+            <td id="value">없음<br><br>
+                 바로가기
+                <button class="btn btn-secondary btn-sm" id="loc2">위치 ▶</button>
+                <button class="btn btn-secondary btn-sm" id="book1">실시간 예약 현황 ▶</button>
+
+
+                </td>
+        </tr>
+        
+        <!--3333333 ------------------------------------------------------------------------------------------------------------------------- -->
+    </table>
+    <br>
+    <table class="second table table-striped" id="3번">
+        <tr>
+            <td class="column" >숙소 이름</td>
+            <td id="value" colspan="3"><h2>3. 보령 히든빌리지 풀빌라</h2></td>
+        </tr>
+       
+        <tr>
+            <td class="column">방 이름</td>
+            <td id="value"><b>105 테라스(독채)</b></td>
+            <td id="value"><b>패밀리A(독채)</b></td>
+            <td id="value"><b>패밀리B(독채)</b></td>
+        </tr>
+        <tr>
+            <td class="column">사진</td>
+            <td class = 'img'><div class='imgs'><img class="IMG" id="img3-1"></div>사진 클릭시 숙소 링크로 이동</td>
+            <td class = 'img'><div class='imgs' ><img class="IMG" id="img3-2"></div>사진 클릭시 숙소 링크로 이동</td>
+            <td class = 'img'><div  class='imgs'><img class="IMG" id="img3-3"></div>사진 클릭시 숙소 링크로 이동</td>
+            <!-- <td class="column" colspan="2">연번</td> -->
+            <!-- <td id="value">3번</td> -->
+        </tr>
+        
+        <tr>
+            <td class="column" >가격</td>
+            <td id="value">299,000원</td>
+            <td id="value">389,000원</td>
+            <td id="value">389,000원</td>
+        </tr>
+        <tr>
+            <td class="column" >크기</td>
+            <td id="value">15평</td>
+            <td id="value">18평</td>
+            <td id="value">18평</td>
+        </tr>
+        <tr>
+            <td class="column" >방 구성</td>
+            <td id="value">침실3 침대2 욕실1</td>
+            <td id="value">침실2 침대2 욕실1</td>
+            <td id="value">침실2 침대2 욕실1</td>
+        </tr>
+        <tr>
+            <td class="column" >기준 인원</td>
+            <td id="value">2인</td>
+            <td id="value">4인</td>
+            <td id="value">4인</td>
+        </tr>
+        <tr>
+            <td class="column" >최대인원</td>
+            <td id="value" colspan="3">6인</td>
+        </tr>
+        <tr>
+            <td class="column" >제공용품</td>
+            <td id="value" colspan="3">욕실용품, TV, 금연, 냉장고, 에어컨, 전기밥솥, 취사시설/도구, 무선인터넷, 드라이기, 린스, 바디워시, 샴푸, 세면도구, 인덕션, 타월, 전자레인지, 테라스
+            </td>
+        </tr>
+        <tr>
+            <td class="column">장점</td>
+            <td></td>
+            <td id="value" colspan="1">
+                <ul>
+                    <li>독체</li>
+                    <li>세탁실 구비</li>
+                </ul>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="column">단점</td>
+            <td></td>
+            <td id="value"colspan="1">
+                <ul>
+                    <li>패밀리는 가격 비쌈</li>
+                    <li>애견펜션(블로그에 개 사진밖에 없음)</li>
+                </ul>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="column" >주차</td>
+            <td id="value" colspan="3">가능</td>
+        </tr>
+        <tr>
+            <td class="column" >비고</td>
+            <td id="value" colspan="3">바베큐<br> 
+                종류: 바베큐그릴+숯,&emsp;
+                이용 객실: 전 객실,&emsp;
+                신청 시간: 16:00~20:00,&emsp;<br>
+                이용 시간: 22시까지,&emsp;
+                포함 사항 : 그릴, 상보, 철망, 장갑, 나무숯(리필됨) 제공<br><br>
+                 바로가기 
+                <button class="btn btn-secondary btn-sm" id="loc3">위치 ▶</button>
+                <button class="btn btn-secondary btn-sm" id="book2">실시간 예약 현황 ▶</button>
+                <button class="btn btn-secondary btn-sm" id="bbq2">바베큐 ▶</button>
+
+                </td>
+        </tr>
+
+        <!-- 444444----------------------------------------------------------------------------- -->
+    </table>
+    <br>
+    <table class="third table table-striped" id="4번">
+        <tr>
+            <td class="column" >숙소 이름</td>
+            <td id="value" colspan="2"><h2>4. 바다로가는길목펜션</h2></td>
+        </tr>
+       
+        <tr>
+            <td class="column">방 이름</td>
+            <td id="value"><b>도란_가족룸(2층)</b></td>
+            <td id="value"><b>다솜_가족룸(2층)</b></td>
+        </tr>
+        <tr>
+            <td class="column">사진</td>
+            <td class = 'img'><div class='imgs'><img class="IMG" id="img4-1"></div>사진 클릭시 숙소 링크로 이동</td>
+            <td class = 'img'><div class='imgs'><img class="IMG" id="img4-2"></div>사진 클릭시 숙소 링크로 이동</td>
+            <!-- <td class="column" colspan="2">연번</td> -->
+            <!-- <td id="value">3번</td> -->
+        </tr>
+        
+        <tr>
+            <td class="column" >가격</td>
+            <td id="value">300,000원</td>
+            <td id="value">260,000원</td>
+        </tr>
+        <tr>
+            <td class="column" >크기</td>
+            <td id="value">23평</td>
+            <td id="value">17평</td>
+        </tr>
+        <tr>
+            <td class="column" >방 구성</td>
+            <td id="value">거실1 화장실2</td>
+            <td id="value">방2 거실겸주방 화장실</td>
+        </tr>
+        <tr>
+            <td class="column" >기준 인원</td>
+            <td id="value">4인</td>
+            <td id="value">4인</td>
+        </tr>
+        <tr>
+            <td class="column" >최대인원</td>
+            <td id="value">6인</td>
+            <td id="value">5인</td>
+        </tr>
+        <tr>
+            <td class="column" >제공용품</td>
+            <td id="value" colspan="2">침대,UHD TV,와이파이,전기렌지,냉장고,에어컨2대,전기밥솥,커피포트,드라이기,샴푸,바디워시,비누,치약,냄비,집기일체, 단 후라이펜은 없음(칫솔,세면도구 및 세면도구 및 개인용품은 준비해오셔야 합니다.)
+            </td>
+        </tr>
+        <tr>
+            <td class="column">장점</td>
+            <td id="value" colspan="2">
+                2층
+            </td>
+        </tr>
+        <tr>
+            <td class="column">단점</td>
+            <td id="value"colspan="2">
+                바다로 걸어서는 좀 걸리는듯
+            </td>
+        </tr>
+        <tr>
+            <td class="column" >주차</td>
+            <td id="value" colspan="2">제3공영주차장 이용(도보 1분)</td>
+        </tr>
+        <tr>
+            <td class="column" >비고</td>
+            <td id="value" colspan="2">바베큐<br> 
+                이용 원할 시 010-5514-7355로 전화,&emsp;
+                4~6인 기준 : 20,000원(선불),&emsp;
+                신청 시간: 16:00~20:00,&emsp;<br>
+                이용 시간: 18:00~23:00(준비가능 마지막 시간 21:00),&emsp;
+                무료 제공 : 바베큐 그릴, 석쇠, 가위, 집게, 야자수탄, 참숯, 식탁보 등등<br><br>
+                 바로가기 
+                <button class="btn btn-secondary btn-sm" id="loc4">위치 ▶</button>
+                <button class="btn btn-secondary btn-sm" id="book3">실시간 예약 현황 ▶</button>
+                <button class="btn btn-secondary btn-sm" id="bbq3">바베큐 ▶</button>
+
+                </td>
+        </tr>
+
+        
+    </table>
+    <br><br><br><br><br>
+    <script>
+        $(()=>{
+            $('#img1').click(function(){
+                location.href="http://www.gogojamjari.com/bbs/board.php?bo_table=preview&wr_id=6";
+            })
+            $('#img2').click(function(){location.href="http://muchangpo.net/page/blue"; })
+            $('#img3-1').click(function(){location.href="https://hdvillage.net/room.html?room_id=33790"; })
+            $('#img3-2').click(function(){location.href="https://hdvillage.net/room.html?room_id=33792"; })
+            $('#img3-3').click(function(){location.href="https://hdvillage.net/room.html?room_id=33793"; })
+            $('#img4-1').click(function(){location.href="https://badakilmok.web-dream.co.kr/43"; })
+            $('#img4-2').click(function(){location.href="https://badakilmok.web-dream.co.kr/1962721399"; })
+
+            $('#bbq1').click(()=> {location.href="http://www.gogojamjari.com/bbs/board.php?bo_table=special&wr_id=4"});
+            $('#loc1').click(()=> {location.href="http://www.gogojamjari.com/theme/sample22/html/traffic.php"});
+
+            $('#loc2').click(()=> {location.href="http://muchangpo.net/page/location"});
+            $('#book1').click(()=> {location.href="https://rev.yapen.co.kr/external?ypIdx=62406&date=202408"});
+
+            $('#loc3').click(()=> {location.href="https://hdvillage.net/traffic.html"});
+            $('#book2').click(()=> {location.href="https://www.bookingplay.co.kr/partner/item/5735/calendar_main/"});
+            $('#bbq2').click(()=> {location.href="https://hdvillage.net/special4.html"});
+            
+            $('#book3').click(()=> {location.href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=1623"});
+            $('#loc4').click(()=> {location.href="https://badakilmok.web-dream.co.kr/55"});
+            $('#bbq3').click(()=> {location.href="https://blog.naver.com/dhswjsdl/221568984037"});
+
+
+
+
+        })
+            // document.getElementById('img1').onclick(()=> location.herf="http://www.gogojamjari.com/bbs/board.php?bo_table=preview&wr_id=6");
+       
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

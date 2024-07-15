@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <title>Document</title>
+    <style>
+        /* #user0{
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <h1>게시판 리스트</h1>
+    <table border="1">
+        <thead>
+            <th>글번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+            <th>작성일</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        $(() => {
+            const board=[{title:'첫번째 글 제목',user:'user01',view:'23',editDate:'2023-03-31'},
+                         {title:'두번째 글 제목',user:'user02',view:'15',editDate:'2023-03-13'},
+                         {title:'세번째 글 제목',user:'admin',view:'75',editDate:'2023-03-12'}
+                    ];
+            let result ='';
+            $(board).each(function(index){
+                result+=`
+                            <tr id=user${index}>
+                                <td>${board.length-index}</td>
+                                <td>${this.title}</td>
+                                <td>${this.user}</td>
+                                <td>${this.view}</td>
+                                <td>${this.editDate}</td>
+                            </tr>`;
+                        })
+                        console.log(result);
+
+                   
+                    $('table>tbody').html(result);
+                    
+                    $('tr[id^=user]').click(function(){
+                        let user =$(this).children('td');
+                        console.log(user);
+                        $('.output').html(`선택한 게시글의 정보 : ${$(user).eq(0).html()} / ${$(user[1]).html()} / ${$(user[2]).html()} / ${$(user[3]).html()} / ${$(user[4]).html()}  `);
+                    })
+        })
+        
+    </script>
+    <div class="output">선택한 게시글의 정보 : 글번호/제목/조회수/작성일</div>
+    
+</body>
+</html>
