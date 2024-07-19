@@ -240,16 +240,23 @@
         #bold{
             color: rgb(0, 87, 46) ;
             text-decoration: none;
-            font-weight: 1000;
+            font-weight: 900;
             font-size: 40px;
             margin-left: 3%;
+            font-family: 'SDGothic';
+
         }
         #search{
             margin-left: 10%;
             border: 1px solid;
-            width: 80px;
-            height: 100%;
+            width: 60px;
+            height: 60px;
             cursor: pointer;
+            background: url('../img/돋보기2removebg-preview.png');
+            background-position: center;
+            background-size: contain;
+            scale: 120%;
+            /* background-color: red; */
         }
         form{
             width: 100%;
